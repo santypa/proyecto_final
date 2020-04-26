@@ -1,0 +1,67 @@
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100px;
+    list-style: none;
+    margin: 0; 
+    background: rgb(22, 57, 138);
+  }
+  
+  .item{
+      color:rgb(255, 255, 255);
+  }
+
+  h1:hover{
+      width: 60px;
+      color: black;
+  
+  }
+ 
+  .a1{
+    position: relative;
+      padding: 2px;
+      top: 20px;
+
+  }
+  .a2{
+    position: relative;
+    top: 20px;
+    padding: 20px 40px ;
+    background: center;
+    background-color:silver;
+
+
+}
+h2{
+    width: 320px;
+    padding: 2px;
+    position: relative;
+    left: 360px;
+}
+h2:hover{
+    background-color: rgb(42, 119, 182);
+    width: 310px;
+    border-radius: 10px;
+}
+.con{
+    background-color: silver;
+    position: relative;
+    width: 160px;
+    height: 80px;
+    top: 12px;
+    left: 12px;
+}
+
+.tex{
+   
+    padding: 2px;
+    position: relative;
+    width: 680px;
+    height: 190px;
+    left: 20px;
+}
+.prin{
+ 
+    position: relative;
+    width: 870px;
+}

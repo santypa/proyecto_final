@@ -1,0 +1,49 @@
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100px;
+    list-style: none;
+    margin: 0; 
+    background: rgb(22, 57, 138);
+  }
+  
+  .item{
+      color:rgb(255, 255, 255);
+  }
+
+  h1:hover{
+      width: 60px;
+      color: black;
+  
+  }
+ 
+  
+    .a1{
+        position: relative;
+          padding: 2px;
+          top: 20px;
+    
+      }
+
+      
+  .a2{
+    position: relative;
+    top: 20px;
+    width: 30px;
+    height: 570px;
+    padding: 20px 40px ;
+    background: center;
+    background-color: silver;
+
+}
+
+
+input[type="text"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+  }
