@@ -1,0 +1,49 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../img/db.jpg) no-repeat center top;
+    background-size: cover;
+    font-family: sans-serif;
+    height: 100vh;
+}
+.box{
+    
+    width: 200px;
+    height: 245px;
+    background: silver;
+    margin: auto;
+    padding: 15px;
+    text-align: center;
+    border-radius: 20px;
+    font-family: cursive;
+    
+    
+}
+h1{
+    text-align: center;
+    color: white;
+    font-family: cursive;
+    
+}
+.box div{
+
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-size: 18px;
+    border-radius: 10px;
+}
+.box button{
+
+    
+    width: 80;
+    border: none;
+    border-bottom: 1px solid rgb(3, 2, 2);
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px;
+    font-family: cursive;
+  
+  
+}
