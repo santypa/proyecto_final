@@ -10,7 +10,9 @@
           $ides=0;
         }
 ?>
+  
 <link rel="stylesheet" href="css/style_miprod.css">  
+
 <title>MIS PRODUCTOS PARA LA VENTA</title>
 <?php
 include('font/head.php');
@@ -19,6 +21,7 @@ include('font/head.php');
 <ul class="navigation">
     <div class="a1 container">
        <li><a href="index.php" class="item animated infinite pulse delay"><h1>Inicio</h1></a></li>
+       <a class="btn btn-dark" href="vender.php" >Crear Producto</a>
     </div>
 </ul>
 
@@ -80,6 +83,39 @@ include('font/head.php');
                                 height: 170px;
                             }
                      </style>
+
+<!------------------------------- ESTADO - EDITAR -ELIMINAR --------------------------------------->
+                      
+              <td class="<?= $mostrar['estado'] ?>"><?= $mostrar['estado'] ?></td>
+                <input type="hidden" name="estado" value="<?= $mostrar['estado']?>">
+               
+                <?php  if($mostrar['estado'] == "activo"){  ?>
+                <th>
+                       <a class="btn btn-secondary" href="crear_producto.php?estado=<?= $mostrar['estado']?>&id=<?= $mostrar['id']?>" class="ini">Inactivar</a>
+                </th>
+                        
+                    <?php  }else{  ?>
+
+                    <th>
+                          <a class="btn btn-success" href="crear_producto.php?estado=<?= $mostrar['estado']?>&id=<?= $mostrar['id']?>">Activar</a>
+                    </th>
+                       
+                    <?php  }  ?>
+                    <th>
+                         <a  class="btn btn-primary"href="editar_producto.php?id=<?= $mostrar['id']?>" class="xd">Editar</a>           
+                    </th>
+                    <th>
+                          <a  class="btn btn-danger"href="eliminar_producto.php?id=<?= $mostrar['id']?>" class="delet">Eliminar</a>
+                    </th>
+
+
+<!------------------------------- ESTADO - EDITAR -ELIMINAR --------------------------------------->
+
+
+
+
+
+
                         <?php
                       }                   
                      ?>
@@ -92,6 +128,7 @@ include('font/head.php');
   </div>
   
 </div>
+
 
 <?php
 include('font/final.php');
