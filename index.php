@@ -253,9 +253,13 @@ include('font/head.php');
                                 <button class="bt2 btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php echo $mostrar['nombre'] ?>
                                 </button>
+                                <div class="mt-1 ml-4" >
+                                <a class="btn btn-success " href="detalles_producto.php">Ver más detalles</a>
+                                </div>
+                                
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                  <div class="c3 card card-body">
-                                   <small class="text-muted">caracteristicas:</small>
+                                   <small class="text-muted">Caracteristicas:</small>
                                     <p><?php echo $mostrar['especificacion'] ?><br>
                                     <small class="text-muted">Unidades : <?php echo $mostrar['unidades'] ?></small><br>
                                    <small class="text-muted">Valor Unitario : <?php echo $mostrar['valor'] ?></small><br>
@@ -290,7 +294,7 @@ include('font/head.php');
                </div>
 
             </div>
-  </div>
+    </div>
 
 
 
