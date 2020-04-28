@@ -70,7 +70,7 @@ include('font/head.php');
          
 
                  <div class="imge">
-                   <input type="file" name="imagen" id="exampleDropdownFormEmail2">
+                   <input type="file" name="imagen" id="exampleDropdownFormEmail2" accept="image/*">
                  </div>
                       <button type="submit" value="Registrar" id="regt" class="gur btn btn-primary animated infinite pulse delay">Guardar</button>
            </form>

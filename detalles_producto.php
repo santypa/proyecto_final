@@ -15,6 +15,7 @@ include('font/head.php');
 
 
 <div class="b2 container-fluid">
+                             <!---------------- Sql Detalles del producto ------------>
             <?php       
               $sql="SELECT p.nombre AS nom_prod,p.valor,p.unidades,p.especificacion,p.estado,p.imagen,
               usuarios.nombre  AS nom_user,usuarios.email,usuarios.celular,usuarios.whatsapp,usuarios.direccion,usuarios.ciudad,
@@ -24,6 +25,7 @@ include('font/head.php');
               
      INNER JOIN usuarios ON usuarios.id = p.id_usuarios
      INNER JOIN categoria_producto ON categoria_producto.id= p.id_categoria_producto ";
+     
 
               $result= DB::query($sql);
             ?>
@@ -34,13 +36,6 @@ include('font/head.php');
                  while($mostrar= mysqli_fetch_array($result)){
                 ?>
 
-                   
-                        <?php
-                        
-                              
-                        ?>
-                        
-                    
                    <div class="col ">    
                       <div class="c1 card border-primary">
                         <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
@@ -65,7 +60,7 @@ include('font/head.php');
                                    <small class="text-muted">Vendedor : <?php echo $mostrar['nom_user'] ?></small><br>
                                    <small class="text-muted">Ciudad: <?php echo $mostrar['ciudad'] ?></small><br>
                                    <small class="text-muted">Direccion: <?php echo $mostrar['direccion'] ?></small><br>
-                                   <small class="text-muted">Direccion: <?php echo $mostrar['email'] ?></small><br>
+                                   <small class="text-muted">Correo: <?php echo $mostrar['email'] ?></small><br>
                                    <small class="text-muted">Celular: <?php echo $mostrar['celular'] ?></small><br>
                                    <small class="text-muted">Whatsapp: <?php echo $mostrar['whatsapp'] ?></small><br>
                                    <small class="text-muted">Estado: <?php echo $mostrar['estado'] ?></small><br>
@@ -91,9 +86,6 @@ include('font/head.php');
                                 border-color:blue;
                             }
                      </style>
-                        <?php
-                                       
-                     ?>
                <?php
                   }
                ?>

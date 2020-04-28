@@ -13,7 +13,7 @@
         fclose($file);
         
         echo "Creando archivo de conexión";
-
+ 
         //Importando la base de datos
         $sql = file_get_contents('includes/db.sql');
 

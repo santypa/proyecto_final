@@ -1,8 +1,7 @@
 <?php
     include('includes/verify_install.php');
      include('includes/db.php');
-   /*  $sql="SELECT * FROM producto ";
-     $result= DB::query($sql);*/
+
 
         /*     Editar-Producto    */
 
@@ -15,6 +14,7 @@
     $producto = DB::query($sql_p);
     
     $producto = mysqli_fetch_object($producto);
+  
 
     if($producto == false){
         echo "El usuario no existe";
@@ -53,7 +53,7 @@ include('font/head.php');
                 <div class="input">
                 <div class="form-group">
                  <label for="exampleFormControlSelect1">Categoria Del Producto</label>
-                  <select class="form-control" name="categoria" id="exampleFormControlSelect1" value="<?= $mostrar['id_categoria_producto'] ?>" >
+                  <select class="form-control" name="categoria" id="exampleFormControlSelect1"  >
                   <option value="">seleccione una categoria</option>
                   <option value="1">Vehiculo</option>
                   <option value="2">Tecnologia</option>
@@ -92,6 +92,34 @@ include('font/head.php');
 
                  <div class="imge">
                    <input type="file" name="imagen" id="exampleDropdownFormEmail2"  >
+                 
+                 
+                   <?php 
+                   
+                     $imag= DB::query($sql_p);
+                     while($mostrar= mysqli_fetch_array($imag)){?>
+                      <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
+                     <a href="#" class="delete" tilte="ver archivo adjunto">
+                     <span class='glyphicon glyphicon-trash' arial-hidden='true'></span>
+                     </a>
+                      <style>
+                            .img{
+                              
+                                position: relative;
+                                top:-10px;
+                                left: 27px;
+                                padding: 2px;
+                                width: 80px;
+                                height: 100px;
+                                border-radius:10px;
+                                border-color:blue;
+                            }
+                     </style>
+                      <?php
+                  }
+               ?>
+                   
+                
                  </div>
 
                  <?php  if($producto->estado == "activo"){  ?>

@@ -2,6 +2,10 @@
     include('includes/verify_install.php');
     include('includes/db.php');
 
+ 
+    
+   
+
 ?>
 <?php
 include('font/head.php');
@@ -217,41 +221,38 @@ include('font/head.php');
 
 
 <div class="b2 container-fluid">
-            <?php       
-              $sql="SELECT * FROM producto ";
+            <?php    
+            
+          
+         
+      
+      
+         
+            
+
+
+              $sql="SELECT  p.nombre AS nom_pro,p.unidades,p.valor,p.imagen,p.especificacion, categoria_producto.nombre AS nomb_catg 
+
+              FROM producto AS p
+              
+              INNER JOIN categoria_producto ON categoria_producto.id= p.id_categoria_producto";
               $result= DB::query($sql);
             ?>
             <div class="b4 card-deck-fluid ">
+            <input type="hidden" name="id" value="<?= $producto->id ?>">
             
                    <div class="r1 row row-cols-5">    
                  <?php
                  while($mostrar= mysqli_fetch_array($result)){
                 ?>
 
-                   
-                        <?php
-                          switch ($mostrar['id_categoria_producto']){
-                            case "1": $cat="vehiculos";  break;
-                            case "2": $cat="Tecnologia";   break;
-                            case "3": $cat="Hogar y Electrodomesticos";   break;
-                            case "4": $cat="Deportes";   break;
-                            case "5": $cat="Belleza y Cuidado Personal";   break;
-                            case "6": $cat="Accesorios";   break;
-                            case "7": $cat="Juguetes";   break;
-                            case "8": $cat="Herramientas";   break;
-                            case "9": $cat="Instrumentos Musicales";   break;
-                            case "10": $cat="Moda";   break;
-                            case "11": $cat="Inmuebles";   break;
-                              }  
-                        ?>
-                    
                    <div class="col ">    
                       <div class="c1 card border-primary">
                         <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
                         <div class="c2 card-body ms-4">
                               <div class="dropdown">
                                 <button class="bt2 btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <?php echo $mostrar['nombre'] ?>
+                                <?php echo $mostrar['nom_pro'] ?>
                                 </button>
                                 <div class="mt-1 ml-4" >
                                 <a class="btn btn-success " href="detalles_producto.php">Ver más detalles</a>
@@ -261,33 +262,31 @@ include('font/head.php');
                                  <div class="c3 card card-body">
                                    <small class="text-muted">Caracteristicas:</small>
                                     <p><?php echo $mostrar['especificacion'] ?><br>
-                                    <small class="text-muted">Unidades : <?php echo $mostrar['unidades'] ?></small><br>
+                                  <small class="text-muted">Unidades : <?php echo $mostrar['unidades'] ?></small><br>
                                    <small class="text-muted">Valor Unitario : <?php echo $mostrar['valor'] ?></small><br>
-                                   <small class="text-muted">Categoria Producto : <?php echo $cat ?></small></p>
-                                 </div>
-                                </div>
-                              </div>
-
+                                   <small class="text-muted">Categoria : <?php echo $mostrar['nomb_catg'] ?></small><br></p>
+                                  
+                               </div>
+                             </div>
+                          </div>
                         </div>
                       </div>
                      </div>
+
                                
                      <style>
                             .img{
                               
                                 position: relative;
-                                top:10px;
-                                left: 7px;
+                                top:20px;
+                                left: 27px;
                                 padding: 2px;
-                                width: 220px;
+                                width: 80%;
                                 height: 200px;
                                 border-radius:10px;
                                 border-color:blue;
                             }
                      </style>
-                        <?php
-                                       
-                     ?>
                <?php
                   }
                ?>
@@ -295,8 +294,6 @@ include('font/head.php');
 
             </div>
     </div>
-
-
 
 
 <?php
