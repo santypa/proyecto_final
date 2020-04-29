@@ -34,7 +34,7 @@
     
         if(isset($id)==false){
           $estado = "activo";
-          $sql = "insert into producto(nombre,id_categoria_producto,valor,unidades,especificacion,imagen,id_usuarios,estado) 
+          $sql = "insert into producto(nombre,id_categoria_producto,precio,unidades,especificacion,imagen,id_usuarios,estado) 
           values('$producto','$categoria','$valor','$unida','$caracteristica','$img','$ides','$estado')";
         }else{
             $sql= "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor', imagen='$img' ,unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";

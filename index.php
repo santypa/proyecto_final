@@ -91,11 +91,10 @@ include('font/head.php');
               </div>
             </div>     
           </div> 
+          
           <?php
           $cuenta='';
-          
             if($ides>0){
-              
               $sql="SELECT * FROM usuarios ";
               $result= DB::query($sql);
               while($mostrar= mysqli_fetch_array($result)){
@@ -115,6 +114,19 @@ include('font/head.php');
           <div class="aa3 col-2">
            <a class="ba btn btn-light-outline-primary " href="vender.php">Vender</a>
             </div>
+            <div class="aa3 col-2">
+          <a class="ba btn btn-light-outline-primary " href="mostrar.php">Mis compras</a>
+         </div>
+         <div class="btn-group">
+            <button type="button" class="btn btn-light-outline-primary  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             <?php echo $cuenta  ?>
+           </button>
+           <div class="dropdown-menu">
+                <a class="dropdown-item" href="mis_productos.php">Mis Productos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="salir.php">salir</a>
+                
+            </div> 
           <?php
         }
         else{
@@ -122,67 +134,16 @@ include('font/head.php');
           <div class="aa3 col-2">
            <a class="ba btn btn-light-outline-primary " href="ingresar.php">Vender</a>
             </div>
-          <?php
-        }
-        ?>
-
-
-        <?php
-        if($ides==0){
-          ?>
-          <div class="aa3 col-2">
-          <a class="ba btn btn-light-outline-primary " href="ingresar.php">Ingresar</a>
+            <div class="aa3 col-2">
+            <a class="ba btn btn-light-outline-primary " href="ingresar.php">Ingresar</a>
           </div>
-          <?php
-        }else{
-          $ides>0;
-        }
-        ?>
-        
-    
-        <div class="aa3 col-2">
-          <a class="ba btn btn-light-outline-primary " href="mostrar.php">Mis compras</a>
-        </div>
-
-        <?php
-        if($ides>0){
-          ?>
-          <div class="btn-group">
-            <button type="button" class="btn btn-light-outline-primary  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-             <?php echo $cuenta  ?>
-           </button>
-           <div class="dropdown-menu">
-                <a class="dropdown-item" href="mis_productos.php">Mis Productos</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Mis Productos</a>
-                
-            </div>    
-          <?php
-
-        }else{
-          ?>
-           <div class="aa3 col-2">
+         <div class="aa3 col-2">
                <a class="ba btn btn-light-outline-primary " href="registro.php"><?php echo $cuenta  ?></a>
            </div>
           <?php
-        }
 
-        ?>
-        <?php   
-        if($ides>0){
-          ?>     
-                <div class="aa3 col-2">
-                <input type="submit" name="btn2"  value="cerrar seccion" id="ini2" class="btn btn-light-outline-primary"
-                <?php
-                if(isset($_POST['btn2'])){
-                 unset($_SESSION['id']);  
-                }
-                ?>
-                 >
-                 </div>
-          
-          <?php
         }
+        
         ?>
         </div>
      </div>
@@ -190,6 +151,7 @@ include('font/head.php');
   </div>
   </form>
 </header>
+
 
 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -218,25 +180,14 @@ include('font/head.php');
   </a>
 </div>
 
-
-
 <div class="b2 container-fluid">
             <?php    
-            
-          
-         
-      
-      
-         
-            
-
 
               $sql="SELECT  p.nombre AS nom_pro,p.unidades,p.valor,p.imagen,p.especificacion, categoria_producto.nombre AS nomb_catg 
-
-              FROM producto AS p
-              
+              FROM producto AS p             
               INNER JOIN categoria_producto ON categoria_producto.id= p.id_categoria_producto";
               $result= DB::query($sql);
+
             ?>
             <div class="b4 card-deck-fluid ">
             <input type="hidden" name="id" value="<?= $producto->id ?>">
@@ -271,9 +222,7 @@ include('font/head.php');
                           </div>
                         </div>
                       </div>
-                     </div>
-
-                               
+                     </div>         
                      <style>
                             .img{
                               
@@ -294,8 +243,6 @@ include('font/head.php');
 
             </div>
     </div>
-
-
 <?php
 include('font/final.php');
 ?>
