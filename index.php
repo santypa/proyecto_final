@@ -1,22 +1,16 @@
 <?php
     include('includes/verify_install.php');
     include('includes/db.php');
-
- 
-    
-   
-
 ?>
 <?php
 include('font/head.php');
 ?>
 
-
 <link rel="stylesheet" href="css/estyle_inde.css">  
 <title>INDEX</title>
 <?php  
 
-       
+      
       // SESSION_UNSET();
         SESSION_START();
         if(isset($_SESSION['id'])){
@@ -117,16 +111,20 @@ include('font/head.php');
             <div class="aa3 col-2">
           <a class="ba btn btn-light-outline-primary " href="mostrar.php">Mis compras</a>
          </div>
-         <div class="btn-group">
+        
+         <div class="dropdown">
             <button type="button" class="btn btn-light-outline-primary  dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
              <?php echo $cuenta  ?>
            </button>
+           
+          
            <div class="dropdown-menu">
                 <a class="dropdown-item" href="mis_productos.php">Mis Productos</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="salir.php">salir</a>
+                 <a class="dropdown-item" href="salir.php">salir</a>
                 
-            </div> 
+            
+            </div>
           <?php
         }
         else{
@@ -183,7 +181,7 @@ include('font/head.php');
 <div class="b2 container-fluid">
             <?php    
 
-              $sql="SELECT  p.nombre AS nom_pro,p.unidades,p.valor,p.imagen,p.especificacion, categoria_producto.nombre AS nomb_catg 
+              $sql="SELECT p.id as idpr, p.nombre AS nom_pro,p.unidades,p.valor,p.imagen,p.especificacion, categoria_producto.nombre AS nomb_catg 
               FROM producto AS p             
               INNER JOIN categoria_producto ON categoria_producto.id= p.id_categoria_producto";
               $result= DB::query($sql);
@@ -191,9 +189,10 @@ include('font/head.php');
             ?>
             <div class="b4 card-deck-fluid ">
             <input type="hidden" name="id" value="<?= $producto->id ?>">
-            
+           
                    <div class="r1 row row-cols-5">    
                  <?php
+                 
                  while($mostrar= mysqli_fetch_array($result)){
                 ?>
 
@@ -205,10 +204,12 @@ include('font/head.php');
                                 <button class="bt2 btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <?php echo $mostrar['nom_pro'] ?>
                                 </button>
+                                <?php 
+                                  $idpe=$mostrar['idpr'];
+                                ?>
                                 <div class="mt-1 ml-4" >
-                                <a class="btn btn-success " href="detalles_producto.php">Ver más detalles</a>
+                                <a class="btn btn-success " href="detalles_producto.php?idep= <?php echo $idpe?>">Ver más detalles</a>
                                 </div>
-                                
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                  <div class="c3 card card-body">
                                    <small class="text-muted">Caracteristicas:</small>
@@ -216,7 +217,6 @@ include('font/head.php');
                                   <small class="text-muted">Unidades : <?php echo $mostrar['unidades'] ?></small><br>
                                    <small class="text-muted">Valor Unitario : <?php echo $mostrar['valor'] ?></small><br>
                                    <small class="text-muted">Categoria : <?php echo $mostrar['nomb_catg'] ?></small><br></p>
-                                  
                                </div>
                              </div>
                           </div>

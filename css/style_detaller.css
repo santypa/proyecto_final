@@ -1,0 +1,105 @@
+body{
+    background-color: black;
+}
+.dropdown-item:hover{
+    background: rgb(44, 190, 209);
+}
+.b2{
+    background-color: rgb(204, 202, 202);
+    top: 30px;
+    min-height:700px;
+    max-height: 6000px;
+}
+
+.b4{
+    
+    position: relative;
+    top: 30px;
+}
+
+
+.col{
+
+    position: relative;
+    padding-top: 20px;
+}
+
+
+.card{
+    background-color: rgba(68, 144, 206,);
+}
+
+.dropdown:hover>.dropdown-menu{
+    display: block;
+}
+.c3{
+        background-color:white;
+        border-radius: 10px;
+}
+
+
+.c1:hover{
+    background-color: rgb(32, 100, 145);
+    border-collapse: inherit;
+    border-color: white;
+    border-radius: 20px;
+    
+}
+
+
+.bt2{
+background-color: white;
+position: relative;
+width: 200px;
+border-radius: 10px;
+}
+
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100px;
+    list-style: none;
+    margin: 0; 
+    background: rgb(51, 89, 177);
+    text-align: center;
+  }
+  h1{
+      color: white;
+      top: 20px;
+      width: 100px;
+      position: relative;
+      left: 40%;
+      font: 3em sans-serif;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  h1:hover{
+    padding: 2px;
+    color: black;
+    font: 4em sans-serif;
+    left: 38%;
+    top: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+.c4{
+   
+    padding: 1%;
+    position: relative;
+    top: 20px;
+    height: 400px;
+    border-radius: 20px;
+}
+
+.c6{
+    background-color: white;
+    border-radius: 10px;
+    width: 1080px;
+    height: 370px;
+}
+.aimg{
+    padding: 9px;
+    width: 370px;
+    height: 370px;
+    border-radius: 20px;
+}
