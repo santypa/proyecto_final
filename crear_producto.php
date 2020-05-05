@@ -34,11 +34,44 @@
     
         if(isset($id)==false){
           $estado = "activo";
-          $sql = "insert into producto(nombre,id_categoria_producto,precio,unidades,especificacion,imagen,id_usuarios,estado) 
+          $sql = "insert into producto(nombre,id_categoria_producto,valor,unidades,especificacion,imagen,id_usuarios,estado) 
           values('$producto','$categoria','$valor','$unida','$caracteristica','$img','$ides','$estado')";
+
+          if(DB::query($sql)){
+           
+            
+            echo "<script>
+                        alert('El producto se registro correctamente');
+                        window.location= 'mis_productos.php'
+                        </script>";
+                        die;
+          }else{
+             
+            echo "<script>
+                        alert('Error al guardar el producto');
+                        window.location= 'mis_productos.php'
+                        </script>";
+                        die;
+          }
         }else{
             $sql= "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor', imagen='$img' ,unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
-        }
+            if(DB::query($sql)){
+           
+            
+              echo "<script>
+                          alert('El producto se edito correctamente');
+                          window.location= 'mis_productos.php'
+                          </script>";
+                          die;
+            }else{
+               
+              echo "<script>
+                          alert('Error al Editar el producto');
+                          window.location= 'mis_productos.php'
+                          </script>";
+                          die;
+            }
+          }
      
       }
 
@@ -47,22 +80,6 @@
    
    
    
-   
-   /*
-        if(DB::query($sql)){ //if($con->query($query) == true)
-    echo "producto guardado correctamente  ";
-    
-    echo "<script>
-                alert('El producto se registro correctamente');
-                window.location= 'mis_productos.php'
-                </script>";
-    
-     }else{
-            echo "No se ha podido guardar la persona. " . $con->error;
-        }
-    
-   
-   */
       
  
   

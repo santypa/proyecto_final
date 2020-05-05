@@ -69,7 +69,7 @@ include('font/head.php');
                ?>
          
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
-                 <a class="dropdown-item" href="#"><?php echo "$ca1" ?></a>
+                 <a class="dropdown-item" href=""><?php echo "$ca1" ?></a>
                  <a class="dropdown-item" href="#"><?php echo "$ca2" ?></a>
                  <a class="dropdown-item" href="#"><?php echo "$ca3" ?></a>
                  <a class="dropdown-item" href="#"><?php echo "$ca4" ?></a>
@@ -80,7 +80,7 @@ include('font/head.php');
                  <a class="dropdown-item" href="#"><?php echo "$ca9" ?></a>
                  <a class="dropdown-item" href="#"><?php echo "$ca10" ?></a>
                  <a class="dropdown-item" href="#"><?php echo "$ca11" ?></a>
-               <div role="separator" class="dropdown-divider"></div>
+              <div role="separator" class="dropdown-divider"></div>
                      <a class="dropdown-item" href="#">Todas las categorias</a>
               </div>
             </div>     
@@ -121,7 +121,8 @@ include('font/head.php');
            <div class="dropdown-menu">
                 <a class="dropdown-item" href="mis_productos.php">Mis Productos</a>
                 <div class="dropdown-divider"></div>
-                 <a class="dropdown-item" href="salir.php">salir</a>
+                 <a class="dropdown-item" href="mi_perfil.php">Mi perfil</a>
+                 <a class="dropdown-item" href="salir.php">Salir</a>
                 
             
             </div>
@@ -183,7 +184,8 @@ include('font/head.php');
 
               $sql="SELECT p.id as idpr, p.nombre AS nom_pro,p.unidades,p.valor,p.imagen,p.especificacion, categoria_producto.nombre AS nomb_catg 
               FROM producto AS p             
-              INNER JOIN categoria_producto ON categoria_producto.id= p.id_categoria_producto";
+              INNER JOIN categoria_producto ON categoria_producto.id= p.id_categoria_producto
+              ORDER BY p.id DESC ";
               $result= DB::query($sql);
 
             ?>

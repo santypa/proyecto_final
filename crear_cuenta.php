@@ -1,7 +1,15 @@
 
 <?php 
        include('includes/db.php');
-       
+
+
+       SESSION_START();
+       if(isset($_SESSION['id'])){
+         $id_user=$_SESSION['id'];
+       }else{
+         $id_user=0;
+       }
+     
        $sql="SELECT * FROM usuarios ";
        $result= DB::query($sql);
     
@@ -30,7 +38,6 @@
         values('$nombres', '$email',('$password'),'$celular','$whatsapp','$direccion','$ciudad','$img')";
 
      if(DB::query($sql)){ //if($con->query($query) == true)
-    echo "Persona guardada correctamente  ";
     
     echo "<script>
                 alert('El usuario se registro correctamente');
@@ -39,7 +46,7 @@
     
     //header("location:index.php");  
      }else{
-    echo "No se ha podido guardar la persona. " . $con->error;
+    echo "No se ha podido guardar la persona. " ;
         }
     } else{
  

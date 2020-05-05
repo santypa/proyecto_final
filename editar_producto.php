@@ -84,7 +84,7 @@ include('font/head.php');
                  <div class="input">
                  <div class="form-group">
                     <label for="exampleFormControlTextarea1">Especificacion Del Producto</label>
-                    <textarea type="text" required name="caracteristica" value="<?= $producto->especificacion ?>" class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
+                    <textarea type="text" required name="caracteristica" value="<?= $producto->especificacion ?>" class="form-control" id="exampleFormControlTextarea1" rows="3" value="<?= $producto->especificacion ?>" ></textarea>
                     </div>      
                  </div>
 

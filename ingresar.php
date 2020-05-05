@@ -65,7 +65,7 @@ include('font/head.php');
         if($reg > 0){
             echo "<script>
             alert('Usuario Correcto ');
-            window.location= 'vender.php'
+            window.location= 'index.php'
             </script>";
         }else{
             echo "<script>
