@@ -190,7 +190,7 @@ include('font/head.php');
 
             ?>
             <div class="b4 card-deck-fluid ">
-            <input type="hidden" name="id" value="<?= $producto->id ?>">
+      
            
                    <div class="r1 row row-cols-5">    
                  <?php
