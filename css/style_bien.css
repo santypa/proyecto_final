@@ -1,0 +1,40 @@
+body{
+    background:url(../img/11.jpg);
+}
+.container{
+    position: relative;
+    padding:2px;
+    text-align:center;
+    top:90px;
+    height: 200px;
+    width: 600px;
+}
+h1{
+      position: relative;
+      color: black;
+      text-align: center;
+      width: 100px;
+      font: 9em sans-serif;
+      top: 5px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      border-collapse: separate;
+}
+
+h2{
+    position: relative;
+    color: wheat;
+    top: 40px;
+    font: 4em sans-serif;
+}
+h2:hover{
+    position: relative;
+    background-color: rgba(41, 180, 235, 0.239);
+    color: black;
+    width: 180px;
+    padding: 3px;
+    border-radius: 30px;
+    left: 200px;
+    border-color: rgb(18, 208, 255);
+    border-collapse: collapse;
+    
+}

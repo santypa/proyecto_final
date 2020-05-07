@@ -2,8 +2,10 @@
     include('includes/verify_install.php');
     include('includes/db.php');
 ?>
+
 <?php
-include('font/head.php');
+
+require_once 'font/head.php';
 ?>
 
 <link rel="stylesheet" href="css/estyle_inde.css">  
@@ -69,19 +71,19 @@ include('font/head.php');
                ?>
          
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
-                 <a class="dropdown-item" href=""><?php echo "$ca1" ?></a>
-                 <a class="dropdown-item" href="#"><?php echo "$ca2" ?></a>
-                 <a class="dropdown-item" href="#"><?php echo "$ca3" ?></a>
-                 <a class="dropdown-item" href="#"><?php echo "$ca4" ?></a>
-                 <a class="dropdown-item" href="#"><?php echo "$ca5" ?></a>
-                 <a class="dropdown-item" href="#"><?php echo "$ca6" ?></a>
-                 <a class="dropdown-item" href="#"><?php echo "$ca7" ?></a>
-                 <a class="dropdown-item" href="#"><?php echo "$ca8" ?></a>
-                 <a class="dropdown-item" href="#"><?php echo "$ca9" ?></a>
-                 <a class="dropdown-item" href="#"><?php echo "$ca10" ?></a>
-                 <a class="dropdown-item" href="#"><?php echo "$ca11" ?></a>
+                 <a class="dropdown-item" href="?p=1"><?php echo "$ca1" ?></a>
+                 <a class="dropdown-item" href="?p=2"><?php echo "$ca2" ?></a>
+                 <a class="dropdown-item" href="?p=3"><?php echo "$ca3" ?></a>
+                 <a class="dropdown-item" href="?p=4"><?php echo "$ca4" ?></a>
+                 <a class="dropdown-item" href="?p=5"><?php echo "$ca5" ?></a>
+                 <a class="dropdown-item" href="?p=6"><?php echo "$ca6" ?></a>
+                 <a class="dropdown-item" href="?p=7"><?php echo "$ca7" ?></a>
+                 <a class="dropdown-item" href="?p=8"><?php echo "$ca8" ?></a>
+                 <a class="dropdown-item" href="?p=9"><?php echo "$ca9" ?></a>
+                 <a class="dropdown-item" href="?p=10"><?php echo "$ca10" ?></a>
+                 <a class="dropdown-item" href="?p=11"><?php echo "$ca11" ?></a>
               <div role="separator" class="dropdown-divider"></div>
-                     <a class="dropdown-item" href="#">Todas las categorias</a>
+                     <a class="dropdown-item" href="?p=categ">Todas las categorias</a>
               </div>
             </div>     
           </div> 
@@ -179,73 +181,8 @@ include('font/head.php');
   </a>
 </div>
 
-<div class="b2 container-fluid">
-            <?php    
-
-              $sql="SELECT p.id as idpr, p.nombre AS nom_pro,p.unidades,p.valor,p.imagen,p.especificacion, categoria_producto.nombre AS nomb_catg 
-              FROM producto AS p             
-              INNER JOIN categoria_producto ON categoria_producto.id= p.id_categoria_producto
-              ORDER BY p.id DESC ";
-              $result= DB::query($sql);
-
-            ?>
-            <div class="b4 card-deck-fluid ">
-      
-           
-                   <div class="r1 row row-cols-5">    
-                 <?php
-                 
-                 while($mostrar= mysqli_fetch_array($result)){
-                ?>
-
-                   <div class="col ">    
-                      <div class="c1 card border-primary">
-                        <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
-                        <div class="c2 card-body ms-4">
-                              <div class="dropdown">
-                                <button class="bt2 btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <?php echo $mostrar['nom_pro'] ?>
-                                </button>
-                                <?php 
-                                  $idpe=$mostrar['idpr'];
-                                ?>
-                                <div class="mt-1 ml-4" >
-                                <a class="btn btn-success " href="detalles_producto.php?idep= <?php echo $idpe?>">Ver más detalles</a>
-                                </div>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                 <div class="c3 card card-body">
-                                   <small class="text-muted">Caracteristicas:</small>
-                                    <p><?php echo $mostrar['especificacion'] ?><br>
-                                  <small class="text-muted">Unidades : <?php echo $mostrar['unidades'] ?></small><br>
-                                   <small class="text-muted">Valor Unitario : <?php echo $mostrar['valor'] ?></small><br>
-                                   <small class="text-muted">Categoria : <?php echo $mostrar['nomb_catg'] ?></small><br></p>
-                               </div>
-                             </div>
-                          </div>
-                        </div>
-                      </div>
-                     </div>         
-                     <style>
-                            .img{
-                              
-                                position: relative;
-                                top:20px;
-                                left: 27px;
-                                padding: 2px;
-                                width: 80%;
-                                height: 200px;
-                                border-radius:10px;
-                                border-color:blue;
-                            }
-                     </style>
-               <?php
-                  }
-               ?>
-               </div>
-
-            </div>
-    </div>
 <?php
+require_once 'categorias/categ.php';
 include('font/final.php');
 ?>
 
