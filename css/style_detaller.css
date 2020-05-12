@@ -1,57 +1,53 @@
-body{
+body {
     background-color: black;
 }
-.dropdown-item:hover{
+
+.dropdown-item:hover {
     background: rgb(44, 190, 209);
 }
-.b2{
+
+.b2 {
     background-color: rgb(204, 202, 202);
     top: 30px;
-    min-height:700px;
+    min-height: 700px;
     max-height: 6000px;
 }
 
-.b4{
-    
+.b4 {
     position: relative;
     top: 30px;
 }
 
-
-.col{
-
+.col {
     position: relative;
     padding-top: 20px;
 }
 
-
-.card{
-    background-color: rgba(68, 144, 206,);
+.card {
+    background-color: rgba(68, 144, 206, );
 }
 
-.dropdown:hover>.dropdown-menu{
+.dropdown:hover>.dropdown-menu {
     display: block;
 }
-.c3{
-        background-color:white;
-        border-radius: 10px;
+
+.c3 {
+    background-color: white;
+    border-radius: 10px;
 }
 
-
-.c1:hover{
+.c1:hover {
     background-color: rgb(32, 100, 145);
     border-collapse: inherit;
     border-color: white;
     border-radius: 20px;
-    
 }
 
-
-.bt2{
-background-color: white;
-position: relative;
-width: 200px;
-border-radius: 10px;
+.bt2 {
+    background-color: white;
+    position: relative;
+    width: 200px;
+    border-radius: 10px;
 }
 
 .navigation {
@@ -59,31 +55,31 @@ border-radius: 10px;
     flex-flow: row wrap;
     height: 100px;
     list-style: none;
-    margin: 0; 
+    margin: 0;
     background: rgb(51, 89, 177);
     text-align: center;
-  }
-  h1{
-      color: white;
-      top: 20px;
-      width: 100px;
-      position: relative;
-      left: 40%;
-      font: 3em sans-serif;
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  h1:hover{
+}
+
+h1 {
+    color: white;
+    top: 20px;
+    width: 100px;
+    position: relative;
+    left: 40%;
+    font: 3em sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1:hover {
     padding: 2px;
     color: black;
     font: 4em sans-serif;
     left: 38%;
     top: 18px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
 }
 
-.c4{
-   
+.c4 {
     padding: 1%;
     position: relative;
     top: 20px;
@@ -91,13 +87,14 @@ border-radius: 10px;
     border-radius: 20px;
 }
 
-.c6{
+.c6 {
     background-color: white;
     border-radius: 10px;
     width: 1080px;
     height: 370px;
 }
-.aimg{
+
+.aimg {
     padding: 9px;
     width: 370px;
     height: 370px;

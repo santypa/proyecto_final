@@ -19,20 +19,19 @@ if(isset($_SESSION['id'])){
 
 include('font/head.php');
 ?>
-  
+<nav class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Item 1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link active" href="#" tabindex="-1" aria-disabled="true">Item 2</a>
+  </li>
+</nav>
 
-  
-<ul class="navigation">
-    <div class="a1 container">
-       <li><a href="index.php" class="item animated infinite pulse delay"><h1>Inicio</h1></a></li>
-     
-    </div>
-</ul>
-
-<div class="a2 container">     
-        <h2 class="animated infinite pulse delay">Mi Perfil </h2> <br>
+<div class="a2 container mx-auto card">     
        
-    <div class="container">
+  <h3 class="mx-auto">Mi Perfil </h3> <br>
+    <div class="container mx-auto">
             <?php       
               $sql="SELECT * FROM usuarios ";
               $result= DB::query($sql);
@@ -44,20 +43,42 @@ include('font/head.php');
                     <?php
                      if($id_user==$mostrar['id']){
                          ?>
-                            <div class="prin card border-primary">
-
-                                <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['img']) ?>"/><br>
-                         
-                                <small class="text-muted">Nombre : <?php echo $mostrar['nombre'] ?></small><br>
-                                <small class="text-muted">Email : <?php echo $mostrar['email'] ?></small><br>
-                                <small class="text-muted">Password : <?php echo $mostrar['password'] ?></small><br>
-                                <small class="text-muted">Celular : <?php echo $mostrar['celular'] ?></small><br>
-                                <small class="text-muted">Whatsapp : <?php echo $mostrar['whatsapp'] ?></small><br>
-                                <small class="text-muted">Direccion : <?php echo $mostrar['direccion'] ?></small><br>
-                                <small class="text-muted">Ciudad : <?php echo $mostrar['ciudad'] ?></small><br>
+                            <div class="a2 container mx-auto card"> 
+                               <div class="container mx-auto">
+                                <img class="mx-auto  card" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['img']) ?>"/><br>
+                                 </div>
+                                  <div class="container mx-auto ml-5 mt-3 mb-4 prin">
+                                    <table class="table prin table-hover">
+                                     
+                                    <tr>
+                                      <td><small class="text-muted">Nombre : <?php echo $mostrar['nombre'] ?></small></td>
+                                    </tr>
+                                    <tr>
+                                      <td><small class="text-muted">Email : <?php echo $mostrar['email'] ?></small></td>
+                                  </tr>
+                                    <tr>
+                                    <td><small class="text-muted">Password : <?php echo $mostrar['password'] ?></small></td>
+                                  </tr>
+                                    <tr>
+                                    <td><small class="text-muted">Celular : <?php echo $mostrar['celular'] ?></small></td>
+                                  </tr>
+                                    <tr>
+                                    <td><small class="text-muted">Whatsapp : <?php echo $mostrar['whatsapp'] ?></small></td>
+                                  </tr>
+                                    <tr>
+                                    <td><small class="text-muted">Direccion : <?php echo $mostrar['direccion'] ?></small></td>
+                                  </tr>
+                                    <tr>
+                                      <td><small class="text-muted">Ciudad : <?php echo $mostrar['ciudad'] ?></small></td>
+                                  </tr>
+                                  
+                                    </table>
+                                    
+                                  </div>
+                              
                         
                             <style>
-                            .img{
+                              .img{
                                 position: relative;
                                 top:10px;
                                left: 325px;
@@ -66,36 +87,23 @@ include('font/head.php');
                                 height: 200px;
                                 border-radius:10px;
                                 border-color:blue;
-                            }
-                            .center-text{
-                              color: red
-                            }
-                     </style>
-                     <th>
+                               }
+                               .center-text{
+                               color: red
+                              }
+                            </style>
+                         <th>
                          <a  class="btn btn-primary"href="editar_perfil.php?id=<?= $mostrar['id']?>" class="xd">Modificar</a>           
-                    </th>
-                    </div>
-                            
+                         </th>
+                    </div>                   
      </div>
-               
+</div>               
                         <?php
                             }
                             ?>
                      <?php
                         }
                        ?>
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
 include('font/final.php');
 

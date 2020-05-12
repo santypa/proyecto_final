@@ -16,21 +16,24 @@ require_once 'font/head.php';
       // SESSION_UNSET();
         SESSION_START();
         if(isset($_SESSION['id'])){
-          $ides=$_SESSION['id'];
+        $ides=$_SESSION['id'];
         }else{
           $ides=0;
         }
-  ?>
+        
+?>
 
 <header>
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
     <div class="a1 container">
         <div class="input-group mb-3">
-            <input type="text" class="in1 form-control" placeholder="Buscar articulos, marcas y mas.." aria-label="Recipient's username" aria-describedby="button-addon2">
+          <form action="buscador.php" method="get">
+            <input type="text" name="palabra"   class="in1 form-control" placeholder="Buscar articulos, marcas y mas.." aria-label="Recipient's username" aria-describedby="button-addon2"/>
             <div class="input-group-append">
-            
-                 <button class="btn btn-light" type="button" id="button-addon2"><img src="ico/lupa.png" id="lupa" class="rounded float-left"></button>
+            <?$buscar=$_GET['palabra'];?>
+                 <button class="btn btn-light" type="submit" name="buscar"id="button-addon2"><img src="ico/lupa.png" id="lupa" class="rounded float-left"></button>
             </div>
+          </form>  
         </div>
     </div>
 
@@ -70,7 +73,7 @@ require_once 'font/head.php';
                   }
                ?>
          
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink" >
+            <div class="dropdown-menu" >
                  <a class="dropdown-item" href="?p=1"><?php echo "$ca1" ?></a>
                  <a class="dropdown-item" href="?p=2"><?php echo "$ca2" ?></a>
                  <a class="dropdown-item" href="?p=3"><?php echo "$ca3" ?></a>
