@@ -59,14 +59,14 @@ include('font/head.php');
                    // echo "sin registrar {$usu}";
             }
         }  
+    
         session_start();
         $_SESSION['id']=$ide;
 
         if($reg > 0){
-            echo "<script>
-            alert('Usuario Correcto ');
-            window.location= 'index.php'
-            </script>";
+            
+            
+            
         }else{
             echo "<script>
             alert('correo o contraseña incorecta');

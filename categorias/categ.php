@@ -23,7 +23,7 @@ $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
                      <?php
                         if($mostrar['id_cat']==$pagina){
                             ?> 
-                            <div class="col ">    
+                            <div class="col-2">    
                             <div class="c1 card border-primary">
                               <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
                               <div class="c2 card-body ms-4">
