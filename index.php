@@ -24,13 +24,18 @@ require_once 'font/head.php';
 ?>
 
 <header>
+
+
+
+
+
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
     <div class="a1 container">
         <div class="input-group mb-3">
           <form action="buscador.php" method="get">
             <input type="text" name="palabra"   class="in1 form-control" placeholder="Buscar articulos, marcas y mas.." aria-label="Recipient's username" aria-describedby="button-addon2"/>
             <div class="input-group-append">
-            <?$buscar=$_GET['palabra'];?>
+            
                  <button class="btn btn-light" type="submit" name="buscar"id="button-addon2"><img src="ico/lupa.png" id="lupa" class="rounded float-left"></button>
             </div>
           </form>  

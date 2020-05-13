@@ -11,6 +11,11 @@
     color: rgb(255, 255, 255);
 }
 
+#lupa {
+    width: 20px;
+    height: 20px;
+}
+
 h1:hover {
     width: 60px;
     color: black;

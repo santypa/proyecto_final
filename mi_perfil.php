@@ -19,26 +19,35 @@ if (isset($_SESSION['id'])) {
 include('font/head.php');
 ?>
 
-<nav class="navbar navbar-dark bg-dark navbar navbar-expand-lg sticky-top">
+<nav class="navbar navbar-dark bg-dark navbar navbar-expand-lg sticky-top text-center">
 
 
   <a class="navbar-brand" href="index.php">
     <img src="img/intel.png" width="40" height="40" class="d-inline-block align-top" alt="logo de intel">
     Prueba
   </a>  
-  
+ 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
 
  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-  <div class="navbar-nav text-center">
+  
+   <div class="navbar-nav text-center mr-auto">
     <a class="nav-item nav-link active" href="#">Inicio</a>
     <a class="nav-item nav-link" href="#">Categoria</a>
     <a class="nav-item nav-link" href="#">Vender</a>
-    <a class="nav-item nav-link" href="#">Mis compras</a>  
-  </div>
+    <a class="nav-item nav-link" href="#">Ingresar</a>  
+    <a class="nav-item nav-link" href="#">Crea tu cuenta</a>  
+   </div>
+ 
+   <div class="d-flex justify-content-center">
+     <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >buscar</button>
+     </form>
+   </div>
  </div>
 </nav>
 

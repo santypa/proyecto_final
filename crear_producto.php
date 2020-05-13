@@ -56,15 +56,12 @@
         }else{
             $sql= "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor', imagen='$img' ,unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
             if(DB::query($sql)){
-           
-            
               echo "<script>
                           alert('El producto se edito correctamente');
                           window.location= 'mis_productos.php'
                           </script>";
                           die;
             }else{
-               
               echo "<script>
                           alert('Error al Editar el producto');
                           window.location= 'mis_productos.php'
