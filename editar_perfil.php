@@ -27,13 +27,11 @@ if($user == false){
 <link rel="stylesheet" href="css/style_regi.css">  
 <?php
 include('font/head.php');
+
+require_once 'navbar/navbar_inicio.php';
+require_once 'navbar/navbar_inicio1.php';
 ?>
 
-<ul class="navigation">
-<div class="a1 container">
-   <li><a href="index.php" class="item animated infinite pulse delay"><h1>Inicio</h1></a></li>
-</div>
-</ul>
 <div class="a2 container w-50">
     <form  action="crear_cuenta.php"  method="POST" enctype="multipart/form-data" >
     <input type="hidden" name="id" value="<?= $user->id ?>">

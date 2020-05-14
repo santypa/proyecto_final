@@ -11,45 +11,19 @@ if (isset($_SESSION['id'])) {
 }
 
 ?>
-<link rel="stylesheet" href="css/style_miprod.css">
+<link rel="stylesheet" href="css/style_per.css">
 <title>Mi Perfil</title>
 
 <?php
 
 include('font/head.php');
+
+require_once 'navbar/navbar_inicio.php';
+require_once 'navbar/navbar_inicio1.php';
+
 ?>
 
-<nav class="navbar navbar-dark bg-dark navbar navbar-expand-lg sticky-top text-center">
 
-
-  <a class="navbar-brand" href="index.php">
-    <img src="img/intel.png" width="40" height="40" class="d-inline-block align-top" alt="logo de intel">
-    Prueba
-  </a>  
- 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
- <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-  
-   <div class="navbar-nav text-center mr-auto">
-    <a class="nav-item nav-link active" href="#">Inicio</a>
-    <a class="nav-item nav-link" href="#">Categoria</a>
-    <a class="nav-item nav-link" href="#">Vender</a>
-    <a class="nav-item nav-link" href="#">Ingresar</a>  
-    <a class="nav-item nav-link" href="#">Crea tu cuenta</a>  
-   </div>
- 
-   <div class="d-flex justify-content-center">
-     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >buscar</button>
-     </form>
-   </div>
- </div>
-</nav>
 
 <div class="a2 container mx-auto card">
 
@@ -66,10 +40,10 @@ include('font/head.php');
       <?php
       if ($id_user == $mostrar['id']) {
       ?>
-        <div class="a2 container mx-auto card">
-          <div class="container mx-auto">
-            <img class="mx-auto  card" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['img']) ?>" /><br>
-          </div>
+        <div class="container mx-auto card">
+         
+            <img class="img1 mx-auto  card"   src="data:image/jpg;base64,<?php echo base64_encode($mostrar['img']) ?>" /><br>
+          
           <div class="container mx-auto ml-5 mt-3 mb-4 prin">
             <table class="table prin table-hover">
 
@@ -99,23 +73,6 @@ include('font/head.php');
 
           </div>
 
-
-          <style>
-            .img {
-              position: relative;
-              top: 10px;
-              left: 325px;
-              padding: 2px;
-              width: 220px;
-              height: 200px;
-              border-radius: 10px;
-              border-color: blue;
-            }
-
-            .center-text {
-              color: red
-            }
-          </style>
           <th>
             <a class="btn btn-primary" href="editar_perfil.php?id=<?= $mostrar['id'] ?>" class="xd">Modificar</a>
           </th>

@@ -13,13 +13,11 @@
 
 <?php
 include('font/head.php');
+require_once 'navbar/navbar_inicio.php';
+require_once 'navbar/navbar_inicio1.php';
 ?>
 
-<header>
-    <div class="a1 container">
-       <a href="index.php" class="item animated infinite pulse delay"><h1>Inicio</h1></a>
-    </div>
-</header>
+
 
 <div class="a2 container">
 <div class="row">
@@ -64,7 +62,10 @@ include('font/head.php');
         $_SESSION['id']=$ide;
 
         if($reg > 0){
-            
+            echo "<script>
+            alert('se registro correctamente');
+            window.location= 'ingresar.php'
+            </script>";
             
             
         }else{

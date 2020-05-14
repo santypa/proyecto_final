@@ -1,7 +1,7 @@
 <?php
 $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
 ?>
-<div class="b2 container-fluid">
+<div class="container-fluid">
             <?php    
            
               $sql="SELECT p.id as idpr, p.nombre AS nom_pro,p.unidades,p.valor,p.imagen,p.especificacion,categoria_producto.id AS id_cat ,categoria_producto.nombre AS nomb_catg 
@@ -11,10 +11,10 @@ $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
               $result= DB::query($sql);
 
             ?>
-            <div class="b4 card-deck-fluid ">
+            <div class="card-deck-fluid ">
       
            
-                   <div class="r1 row row-cols-5">    
+                   <div class="row ">    
                  <?php
                  $productos=0;
                  while($mostrar= mysqli_fetch_array($result)){
@@ -23,12 +23,12 @@ $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
                      <?php
                         if($mostrar['id_cat']==$pagina){
                             ?> 
-                            <div class="col-2">    
-                            <div class="c1 card border-primary">
+                            <div class="cl1 col-xl-3 col-lg-4  col-md-6 col-sm-12 ">    
+                            <div class="card border-primary">
                               <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
-                              <div class="c2 card-body ms-4">
+                              <div class="card-body ms-4">
                                     <div class="dropdown">
-                                      <button class="bt2 btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <button class="btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       <?php echo $mostrar['nom_pro'] ?>
                                       </button>
                                       <?php 
@@ -38,7 +38,7 @@ $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
                                       <a class="btn btn-success " href="detalles_producto.php?idep= <?php echo $idpe?>">Ver más detalles</a>
                                       </div>
                                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                       <div class="c3 card card-body">
+                                       <div class="card card-body">
                                          <small class="text-muted">Caracteristicas:</small>
                                           <p><?php echo $mostrar['especificacion'] ?><br>
                                         <small class="text-muted">Unidades : <?php echo $mostrar['unidades'] ?></small><br>
@@ -50,40 +50,28 @@ $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
                               </div>
                             </div>
                            </div>         
-                           <style>
-                                  .img{
-                                    
-                                      position: relative;
-                                      top:20px;
-                                      left: 27px;
-                                      padding: 2px;
-                                      width: 80%;
-                                      height: 200px;
-                                      border-radius:10px;
-                                      border-color:blue;
-                                  }
-                           </style>
+                         
                             <?php
                             $productos=2;
                         } else if ($pagina=='categ'){
                                 
                             ?> 
-                            <div class="col ">    
-                            <div class="c1 card border-primary">
+                            <div class="cl1 col-xl-3 col-lg-4  col-md-6 col-sm-12 ">    
+                            <div class="card border-primary">
                               <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
-                              <div class="c2 card-body ms-4">
+                              <div class="card-body ms-4">
                                     <div class="dropdown">
-                                      <button class="bt2 btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <button class="btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       <?php echo $mostrar['nom_pro'] ?>
                                       </button>
                                       <?php 
                                         $idpe=$mostrar['idpr'];
                                       ?>
                                       <div class="mt-1 ml-4" >
-                                      <a class="btn btn-success " href="detalles_producto.php?idep= <?php echo $idpe?>">Ver más detalles</a>
+                                      <a class="btn-success " href="detalles_producto.php?idep= <?php echo $idpe?>">Ver más detalles</a>
                                       </div>
                                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                       <div class="c3 card card-body">
+                                       <div class="card card-body">
                                          <small class="text-muted">Caracteristicas:</small>
                                           <p><?php echo $mostrar['especificacion'] ?><br>
                                         <small class="text-muted">Unidades : <?php echo $mostrar['unidades'] ?></small><br>
@@ -97,13 +85,9 @@ $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
                            </div>         
                            <style>
                                   .img{
-                                    
-                                      position: relative;
-                                      top:20px;
-                                      left: 27px;
-                                      padding: 2px;
-                                      width: 80%;
-                                      height: 200px;
+                                  
+                                      width: 100%;
+                                      height: 50%;
                                       border-radius:10px;
                                       border-color:blue;
                                   }

@@ -4,21 +4,18 @@
 
 ?>
 <?php
-include('font/head.php');
 
 $ids=$_GET['idep'];
-?>
 
+include('font/head.php');
+require_once 'navbar/navbar_inicio.php';
+require_once 'navbar/navbar_inicio1.php';
+?>
 
 <link rel="stylesheet" href="css/style_detaller.css">  
 <title>Detalles Producto</title>
 
 
-<ul class="navigation">
-    <div class="a11 container">
-       <li><a href="index.php" class="item animated infinite pulse delay"><h1>Inicio</h1></a></li>
-    </div>
-</ul>
 
 
 

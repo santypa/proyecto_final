@@ -1,0 +1,30 @@
+.navbar{
+    color: black;
+    height: 100px;
+}
+
+.buscar{
+    padding:0px;
+    width: 400px;
+}
+
+.nav-item:hover{
+    position: relative;
+    top: -5px;
+    height: 20px;
+    color: black;
+    text-decoration: black;
+}
+
+h{
+    color: #000;
+}
+.dropdown:hover>.dropdown-menu{
+    display: block;
+}
+
+.dropdown-item:hover{
+    background: rgb(44, 190, 209);
+}
+
+

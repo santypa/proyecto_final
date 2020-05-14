@@ -16,14 +16,15 @@
 <title>MIS PRODUCTOS PARA LA VENTA</title>
 <?php
 include('font/head.php');
+require_once 'navbar/navbar_inicio.php';
+?>
+<a class="nav-item nav-link active"  href="vender.php"> <h3> Crear Producto</h3> </a>
+
+<?php
+
+require_once 'navbar/navbar_inicio1.php';
 ?>
 
-<ul class="navigation">
-    <div class="a1 container">
-       <li><a href="index.php" class="item animated infinite pulse delay"><h1>Inicio</h1></a></li>
-       <a class="btn btn-dark" href="vender.php" >Crear Producto</a>
-    </div>
-</ul>
 
 <div class="a2 container">     
         <h2 class="animated infinite pulse delay">Poductos Agregados </h2> <br>

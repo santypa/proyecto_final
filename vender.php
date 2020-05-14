@@ -12,17 +12,15 @@
 <title>PRODUCTO</title>
 <?php
 include('font/head.php');
+require_once 'navbar/navbar_inicio.php';
+?>
+ <a class="nav-item nav-link active"  href="mis_productos.php"> <h3> Mis Productos</h3> </a>
+<?php
+require_once 'navbar/navbar_inicio1.php';
 ?>
 
-
-<ul class="navigation">
-    <div class="a1 container">
-       <li><a href="index.php" class="item animated infinite pulse delay"><h1>Inicio</h1></a></li>
-       <a class="btn btn-dark" href="mis_productos.php" >Mis Productos</a>
-    </div>
-</ul>
-
-    <div class="a2 container w-50">
+<div class="row justify-content-center">
+    <div class="a2  col-sm-4 md-5 lg-2 xl-3  ">
         <form  action="crear_Producto.php"  method="POST" enctype="multipart/form-data" >
                  <div class="input">
                    <label for="exampleDropdownFormEmail2"> <h2>Nombres Del Producto</h2></label>
@@ -69,7 +67,7 @@ include('font/head.php');
 
          
 
-                 <div class="imge">
+                 <div class="col-sm-4 md-7 lg-7 xl-7 ">
                    <input type="file" name="imagen" id="exampleDropdownFormEmail2" accept="image/*">
                  </div>
                       <button type="submit" value="Registrar" id="regt" class="gur btn btn-primary animated infinite pulse delay">Guardar</button>
@@ -77,6 +75,7 @@ include('font/head.php');
 
 
         </from>
+    </div>
     </div>
 <?php
 include('font/final.php');

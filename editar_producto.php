@@ -29,15 +29,13 @@
 <title>Editar_Porducto</title>
 <?php
 include('font/head.php');
+require_once 'navbar/navbar_inicio.php';
+?>
+ <a class="nav-item nav-link active"  href="mis_productos.php"> <h3> Mis Productos</h3> </a>
+<?php
+require_once 'navbar/navbar_inicio1.php';
 ?>
 
-
-<ul class="navigation">
-    <div class="a1 container">
-       <li><a href="index.php" class="item animated infinite pulse delay"><h1>Inicio</h1></a></li>
-       <a class="btn btn-dark" href="mis_productos.php" >Mis Productos</a>
-    </div>
-</ul>
 
     <div class="a2 container w-50">
         <form  action="crear_Producto.php"  method="POST" enctype="multipart/form-data" >
