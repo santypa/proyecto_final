@@ -1,0 +1,60 @@
+.b2{
+    background-color: silver;
+}
+
+.c5{
+    padding-top: 20px;
+    width: 100%;
+}
+
+.c6{
+   
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+.img1:hover{
+    border-radius: 20px;
+    border-color: black;
+   }
+   
+   .img2{
+    height: 250px;
+}
+  .r1{
+      padding-top: 30px;
+     background-color: silver;
+  } 
+
+    .c{
+        padding-top: 20px;
+    }
+  .card1{
+        padding-top: 20px;
+    background-color: white;
+    padding:3%;
+    width: 100%;
+    height: 100%;
+    border-radius:10px;
+
+  }
+  .card1:hover{
+    border-radius:30px;
+    }
+    .btnd{
+        background-color:silver;
+        color:white;
+        padding: 1%;
+        width: 70%;
+        text-align: center;
+        border-radius:15px;
+    }
+
+    .btnd:hover{
+        background-color: rgb(121, 188, 219);
+        color: white;
+        padding: 1%;
+        width: 70%;
+        text-align: center;
+        border-radius:15px;
+    }

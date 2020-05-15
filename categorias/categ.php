@@ -1,7 +1,8 @@
 <?php
 $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
+include ('css/style.php');
 ?>
-<div class="container-fluid">
+<div class="car  container-fluid">
             <?php    
            
               $sql="SELECT p.id as idpr, p.nombre AS nom_pro,p.unidades,p.valor,p.imagen,p.especificacion,categoria_producto.id AS id_cat ,categoria_producto.nombre AS nomb_catg 
@@ -23,9 +24,9 @@ $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
                      <?php
                         if($mostrar['id_cat']==$pagina){
                             ?> 
-                            <div class="cl1 col-xl-3 col-lg-4  col-md-6 col-sm-12 ">    
-                            <div class="card border-primary">
-                              <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
+                            <div class="cl1 container-fluid col-xl-3 col-lg-4  col-md-6 col-sm-9 ">    
+                            <div class="card1 border-primary">
+                                <img src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>" class="img1 img-thumbnail " alt="Responsive image"><br>
                               <div class="card-body ms-4">
                                     <div class="dropdown">
                                       <button class="btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,8 +35,8 @@ $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
                                       <?php 
                                         $idpe=$mostrar['idpr'];
                                       ?>
-                                      <div class="mt-1 ml-4" >
-                                      <a class="btn btn-success " href="detalles_producto.php?idep= <?php echo $idpe?>">Ver más detalles</a>
+                                      <div class="btnd  mt-1 ml-4" >
+                                      <a class="btn" href="detalles_producto.php?idep= <?php echo $idpe?>">Ver más detalles </a>
                                       </div>
                                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                        <div class="card card-body">
@@ -56,10 +57,12 @@ $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
                         } else if ($pagina=='categ'){
                                 
                             ?> 
-                            <div class="cl1 col-xl-3 col-lg-4  col-md-6 col-sm-12 ">    
-                            <div class="card border-primary">
-                              <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
-                              <div class="card-body ms-4">
+                            <div class="cl1 col-xl-3 col-lg-4  col-md-6 col-sm-9 ">    
+                            <div class="card1 border-primary">
+  
+                             <img src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>" class="img1 img-thumbnail " alt="Responsive image"><br>
+
+                            <div class="card-body ms-4">
                                     <div class="dropdown">
                                       <button class="btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       <?php echo $mostrar['nom_pro'] ?>
@@ -67,8 +70,8 @@ $pagina= isset($_GET['p']) ? strtolower($_GET['p']) : "categ" ;
                                       <?php 
                                         $idpe=$mostrar['idpr'];
                                       ?>
-                                      <div class="mt-1 ml-4" >
-                                      <a class="btn-success " href="detalles_producto.php?idep= <?php echo $idpe?>">Ver más detalles</a>
+                                      <div class="btnd  mt-1 ml-4" >
+                                      <a class="btn" href="detalles_producto.php?idep= <?php echo $idpe?>">Ver más detalles</a>
                                       </div>
                                       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                        <div class="card card-body">

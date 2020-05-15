@@ -9,11 +9,9 @@
         }else{
           $ides=0;
         }
-     
+        include ('css/style.php');
 ?>
-<link rel="stylesheet" href="css/style_in.css">
-
-<header>
+  
 
 <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
 <nav class="navbar navbar-dark bg-primary navbar navbar-expand-lg sticky-top text-center" >
@@ -139,7 +137,7 @@
 </div>
            <div class="d-flex justify-content-center">
             <form class="form-inline my-2 my-lg-0">
-              <input class="buscar form-control mr-sm-2" type="search" placeholder="   Buscar.  " aria-label="Search">
+              <input class="buscar form-control mr-sm-2" type="search" placeholder="   Buscar ...  " aria-label="Search">
              <button class="btn btn-outline-light my-2 my-sm-0" type="submit" >buscar</button>
              </form>
           </div>
@@ -147,5 +145,7 @@
  </div>
 </nav>
 
+
   </form>
-</header>
+
+ 

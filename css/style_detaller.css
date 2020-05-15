@@ -7,7 +7,7 @@ body {
 }
 
 .b2 {
-    background-color: rgb(204, 202, 202);
+    background-color: rgb(182, 45, 45);
     top: 30px;
     min-height: 700px;
     max-height: 6000px;
@@ -23,7 +23,7 @@ body {
     padding-top: 20px;
 }
 
-.card {
+.card{
     background-color: rgba(68, 144, 206, );
 }
 
@@ -87,12 +87,16 @@ h1:hover {
     border-radius: 20px;
 }
 
+.c5{
+    background-color: rgb(67, 69, 170);
+}
 .c6 {
-    background-color: white;
+    background-color: rgb(170, 67, 67);
     border-radius: 10px;
     width: 1080px;
     height: 370px;
 }
+
 
 .aimg {
     padding: 9px;
