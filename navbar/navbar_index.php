@@ -195,8 +195,8 @@
         ?><?php //validacion para la opcion de ingresar, crear cuenta en nabvar ?>
 </div>
            <div class="d-flex justify-content-center">
-            <form class="form-inline my-2 my-lg-0">
-              <input class="buscar form-control mr-sm-2" type="search" placeholder="   Buscar ...  " aria-label="Search">
+            <form class="form-inline my-2 my-lg-0" action="buscar.php" method="post">
+              <input class="buscar form-control mr-sm-2" type="search" name="buscar" placeholder="   Buscar ...  " aria-label="Search">
              <button class="btn btn-outline-light my-2 my-sm-0" type="submit" >buscar</button>
              </form>
           </div>
@@ -204,7 +204,12 @@
  </div>
 </nav>
 
+</form>
 
-  </form>
+    <form action="buscar.php" method="post">
+        <input type="text" name="buscar">
+        <input type="submit" value="Buscar">
+        
+      </form>
 
  
