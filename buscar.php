@@ -1,6 +1,4 @@
 <?php  
-
-      
       // SESSION_UNSET();
         SESSION_START();
         if(isset($_SESSION['id'])){
