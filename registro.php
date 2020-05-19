@@ -16,6 +16,7 @@ require_once 'navbar/navbar_inicio1.php';
 
     <div class="a2 container w-50">
         <form  action="crear_cuenta.php"  method="POST" enctype="multipart/form-data" >
+        
                  <div class="input">
                    <label for="exampleDropdownFormEmail2">Nombres</label>
                    <input type="text" name="nombres" class="form-control" id="exampleDropdownFormEmail2" required placeholder="Nombres">

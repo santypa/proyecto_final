@@ -24,6 +24,7 @@ include ('css/style.php');
                      <?php
                         if($mostrar['id_cat']==$pagina){
                             ?> 
+                            
                             <div class="cl1 container-fluid col-xl-3 col-lg-4  col-md-6 col-sm-9 ">    
                             <div class="card1 border-primary">
                                 <img src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>" class="img1 img-thumbnail " alt="Responsive image"><br>

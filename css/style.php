@@ -80,5 +80,44 @@ border-radius:30px;
         text-align: center;
         border-radius:15px;
     }
+
+    .dr1{
+        
+    background-color:rgb(223, 222, 222);
+    padding:5px;
+    width: 270px;
+    }
+
+    
+input[type="text"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 18px;
+
+  }
+.f1:hover{
+      background:white;
+  }
+  
+  
+
+  input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 18px;
+
+  }
+  .buscar{
+      width: 300px;
+  } 
+
 </style>
 

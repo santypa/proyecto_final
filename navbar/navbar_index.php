@@ -119,13 +119,72 @@
 
         }
         else{
+          $sql="SELECT * FROM usuarios ";
+          $result= DB::query($sql);
           ?>
-        <li class="nav-item">
-          <a class="nav-link" href="ingresar.php"><h>Vender</h></a>
-        <li>
-        <li class="nav-item">
-          <a class="nav-link" href="ingresar.php"><h>Ingresar</h></a>
-        <li >
+        
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <h>Ingresar<h>
+        </a>
+
+           <div class="dr1 dropdown-menu">
+           <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+
+              <div class="input justify-content-around">
+                  <label for="exampleDropdownFormEmail2"></label>    
+                  <input type="text" name="gmail" id="gm"class="f1 form-control" required placeholder="Correo ..." >
+                 
+              </div>
+              <div class="input justify-content-around">
+                  <label for="exampleDropdownFormEmail2"></label>
+                  <input type="password" name="passe" id="passwo" class="f1 form-control" required placeholder="Contraseña..."  >
+              </div><br>
+              <div class="inici">
+                  <input type="submit" name="btn1"  value="ENTRAR" id="ini2" class="btn btn-primary animated infinite pulse delay"  
+                  <?php
+             if(isset($_POST['btn1'])){
+                 $gmai="";
+                 $gmai= $_POST['gmail'];
+                 $pass=$_POST['passe'];
+                 $ide="";
+                 echo "<p>correo: {$gmai}, contraseña: {$pass} </p>";
+                 $usu=0;
+                  $reg=0;
+                  while($mostrar= mysqli_fetch_array($result)){
+                     if($gmai==$mostrar['email'] && $pass == $mostrar['password'] ){
+                              $reg++;
+                              $ide=$mostrar['id'];
+                     }
+                     else{     
+                    $usu++;
+                     }
+                 }  
+                 session_start();
+                 $_SESSION['id']=$ide;
+
+                 if($reg > 0){
+                     echo "<script>
+                    alert('se registro correctamente');
+                    window.location= 'index.php'
+                    </script>";
+                 }else{
+            echo "<script>
+            alert('correo o contraseña incorecta');
+            window.location= 'ingresar.php'
+            </script>";
+                  }
+              }
+             ?>
+              >
+              
+             </div>
+              </form>
+            </div>
+        </li>
+  
+
+  
         <li class="nav-item">
           <a class="nav-link" href="registro.php"><h><?php echo $cuenta  ?></h></a>
         <li >

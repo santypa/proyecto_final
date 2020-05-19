@@ -8,7 +8,7 @@
  
 ?>
 
-<link rel="stylesheet" href="css/style_pro.css">  
+<link rel="stylesheet" href="css/style_prod.css">  
 <title>PRODUCTO</title>
 <?php
 include('font/head.php');
@@ -19,11 +19,12 @@ require_once 'navbar/navbar_inicio.php';
 require_once 'navbar/navbar_inicio1.php';
 ?>
 
-<div class="row justify-content-center">
-    <div class="a2  col-sm-4 md-5 lg-2 xl-3  ">
+
+<div class="ac row justify-content-center">
+    <div class="ac1 ml-4 col-sm-6 col-md-7 col-lg-9 col-xl-10  ">
         <form  action="crear_Producto.php"  method="POST" enctype="multipart/form-data" >
-                 <div class="input">
-                   <label for="exampleDropdownFormEmail2"> <h2>Nombres Del Producto</h2></label>
+                 <div class="titul">
+                   <label for="exampleDropdownFormEmail2"> <h2> Producto</h2></label>
                    <input type="text" name="nombre" class="form-control" id="exampleDropdownFormEmail2" required placeholder="Nombres" > 
                  </div>
 
@@ -67,13 +68,12 @@ require_once 'navbar/navbar_inicio1.php';
 
          
 
-                 <div class="col-sm-4 md-7 lg-7 xl-7 ">
+                 <div class="col mt-1 ml-4 ">
                    <input type="file" name="imagen" id="exampleDropdownFormEmail2" accept="image/*">
                  </div>
+                 <br>
                       <button type="submit" value="Registrar" id="regt" class="gur btn btn-primary animated infinite pulse delay">Guardar</button>
-           </form>
-
-
+           
         </from>
     </div>
     </div>

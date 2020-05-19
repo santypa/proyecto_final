@@ -11,7 +11,7 @@
         }
 ?>
   
-<link rel="stylesheet" href="css/style_miprod.css">  
+<link rel="stylesheet" href="css/style_mispro.css">  
 
 <title>MIS PRODUCTOS PARA LA VENTA</title>
 <?php
@@ -19,17 +19,17 @@ include('font/head.php');
 require_once 'navbar/navbar_inicio.php';
 ?>
 <a class="nav-item nav-link active"  href="vender.php"> <h3> Crear Producto</h3> </a>
-
 <?php
-
 require_once 'navbar/navbar_inicio1.php';
 ?>
 
 
-<div class="a2 container">     
+
+<div class="con container-fluid col-sm-11">     
+
         <h2 class="animated infinite pulse delay">Poductos Agregados </h2> <br>
        
-    <div class="container">
+    <div class="c2 container">
             <?php       
               $sql="SELECT * FROM producto ";
               $result= DB::query($sql);
@@ -59,31 +59,24 @@ require_once 'navbar/navbar_inicio1.php';
                               
                         ?>
                     
-                    <div class="prin card border-primary" >
-                      <div class="row no-gutters">
-                        <div class="con">
-                         <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
-                        </div>
-                       <div class="tex ">
-                          <div class="card-body">
-                           <h5 class="card-title"><?php echo $mostrar['nombre'] ?><br> <small class="text-muted">caracteristicas:</small></h5>
-                             <?php echo $mostrar['especificacion'] ?><br>
-                           <small class="text-muted">Unidades : <?php echo $mostrar['unidades'] ?></small><br>
-                           <small class="text-muted">Valor Unitario : <?php echo $mostrar['valor'] ?></small><br>
-                           <small class="text-muted">Categoria Producto : <?php echo $cat ?></small>
-                          </div>
-                        </div>
+                    
+                      <div class="cont2 row">
+                           <div class="cont col-xl-5 col-lg-5  col-md-6 col-sm-12  ">
+                                <img class="img1 " src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
+                            </div>
+                          <div class="cont col-xl-7 col-lg-7  col-md-6 col-sm-12 ">
+                              <div class="card-body mt-1 ml-4">
+                                <h5 class="card-title"><?php echo $mostrar['nombre'] ?><br> <small class="text-muted">caracteristicas:</small></h5>
+                                <?php echo $mostrar['especificacion'] ?><br>
+                                   <small class="text-muted">Unidades : <?php echo $mostrar['unidades'] ?></small><br>
+                                   <small class="text-muted">Valor Unitario : <?php echo $mostrar['valor'] ?></small><br>
+                                   <small class="text-muted">Categoria Producto : <?php echo $cat ?></small>
+                               </div>
+                         </div>
                       </div> 
-                    </div><br>
+                    
+                    <br>
 
-                     <style>
-                            .img{
-                                position: relative;
-                                padding: 2px;
-                                width: 170px;
-                                height: 170px;
-                            }
-                     </style>
 
 <!------------------------------- ESTADO - EDITAR -ELIMINAR --------------------------------------->
                       
@@ -112,23 +105,15 @@ require_once 'navbar/navbar_inicio1.php';
 
 <!------------------------------- ESTADO - EDITAR -ELIMINAR --------------------------------------->
 
-
-
-
-
-
                         <?php
                       }                   
-                     ?>
-                     
-               <?php
                   }
                ?>
                
     </div>
-  </div>
-  
 </div>
+  
+
 
 
 <?php

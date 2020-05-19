@@ -1,0 +1,32 @@
+.con{
+    top: 5%;
+    background-color: silver;
+    border-radius: 10px;
+    width: 100%;
+    height: max-content;
+    text-align: center;
+}
+
+h2{
+    padding: 10px;
+   
+    text-align: center;
+}
+
+.img1{
+    text-align: center;
+    position: relative;
+    padding: 4%;
+    width: 100%;
+  
+}
+.cont2{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.c2{
+    height: 50%;
+}
