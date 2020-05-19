@@ -26,6 +26,7 @@ if(isset($_POST['buscar'])!=''){
            
                    <div class="row ">    
                  <?php
+                 $ve=0;
                  $productos=0;
                  while($mostrar= mysqli_fetch_array($result)){
                 ?>
@@ -67,7 +68,7 @@ if(isset($_POST['buscar'])!=''){
                               $sp++;
                             }
                             $ver=0;
-                            for($a=0;$a<=$lgp;$a++){
+                            /* for($a=0;$a<=$lgp;$a++){
                               if($ta[$a]==$te[0]){
                                 $ver++;
                               }
@@ -77,9 +78,13 @@ if(isset($_POST['buscar'])!=''){
                               include ('categorias/mostar.php');
                              }else{
                                $ver=0;
-                             }
+                             } */
                         
-              
+                             if($ta[0]==$te[0]){
+                              include ('categorias/mostar.php');
+                             }
+                             echo $ta[0];
+                             echo $te[0];
                           }
                          
                           $productos="2";
