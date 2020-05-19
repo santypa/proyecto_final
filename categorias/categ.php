@@ -79,12 +79,13 @@ if(isset($_POST['buscar'])!=''){
                              }else{
                                $ver=0;
                              } */
-                        
-                             if($ta[0]==$te[0]){
+                              $te1=strtoupper($te[0]);
+
+                             if($ta[0]==$te[0] || $ta[0]==$te1 ){
                               include ('categorias/mostar.php');
                              }
-                             echo $ta[0];
-                             echo $te[0];
+                            /*  echo $ta[0];
+                             echo $te[0]; */
                           }
                          
                           $productos="2";
