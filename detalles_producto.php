@@ -41,7 +41,8 @@ require_once 'navbar/navbar_inicio1.php';
                           <div class="c6 row">
 
                             <div class="col-xl-6 col-lg-6 col-md-12 ">
-                            <img src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>" class="img1 img-thumbnail " alt="Responsive image"><br>
+                            <?php echo '<img  class="img2 img-thumbnail " src ="'.$mostrar['imagen'].'" width="500px" height="400px">' ?> <!-- Mostrar Imagen -->
+                           
                             </div>
 
                             <div class="col-xl-6 col-lg-6 col-md-12 ">
@@ -91,7 +92,8 @@ require_once 'navbar/navbar_inicio1.php';
                         ?>
                       <div class="c container-fluid col-xl-3 col-lg-4  col-md-6 col-sm-9 ">    
                       <div class="card1 card border-primary">
-                        <img src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>" class="img2 img-thumbnail " alt="Responsive image"><br>
+                      <?php echo '<img  class="img2 img-thumbnail " src ="'.$mostrar['imagen'].'" width="400px" height="500px">' ?> <!-- Mostrar Imagen -->
+                      
                        
                         <div class="c2 card-body ms-4">
                               <div class="dropdown">

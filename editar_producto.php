@@ -82,7 +82,7 @@ require_once 'navbar/navbar_inicio1.php';
                  <div class="input">
                  <div class="form-group">
                     <label for="exampleFormControlTextarea1">Especificacion Del Producto</label>
-                    <textarea type="text" required name="caracteristica" value="<?= $producto->especificacion ?>" class="form-control" id="exampleFormControlTextarea1" rows="3" value="<?= $producto->especificacion ?>" ></textarea>
+                    <input type="text" required name="caracteristica" value="<?= $producto->especificacion ?>" class="form-control" id="exampleFormControlTextarea1" rows="3" value="<?= $producto->especificacion ?>" ></input>
                     </div>      
                  </div>
 
@@ -96,7 +96,7 @@ require_once 'navbar/navbar_inicio1.php';
                    
                      $imag= DB::query($sql_p);
                      while($mostrar= mysqli_fetch_array($imag)){?>
-                      <img class="img" src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
+                      <?php echo '<img  class="img2 img-thumbnail " src ="'.$mostrar['imagen'].'" width="400px" height="500px">' ?> <!-- Mostrar Imagen -->
                      <a href="#" class="delete" tilte="ver archivo adjunto">
                      <span class='glyphicon glyphicon-trash' arial-hidden='true'></span>
                      </a>

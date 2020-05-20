@@ -30,12 +30,17 @@
     $valor=$_POST['valor'];
     $unida=$_POST['unidad'];
     $caracteristica=$_POST['caracteristica'];
-    $img=addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
+    //Crear Imagen en EN proyecyo
+    $imagen=$_FILES['imagen']['name'];
+    $ruta=$_FILES['imagen']['tmp_name'];
+    $destino="imagen/".$imagen;
+    copy($ruta,$destino);
+
     
         if(isset($id)==false){
           $estado = "activo";
           $sql = "insert into producto(nombre,id_categoria_producto,valor,unidades,especificacion,imagen,id_usuarios,estado) 
-          values('$producto','$categoria','$valor','$unida','$caracteristica','$img','$ides','$estado')";
+          values('$producto','$categoria','$valor','$unida','$caracteristica','$destino','$ides','$estado')";
 
           if(DB::query($sql)){
            
@@ -54,7 +59,7 @@
                         die;
           }
         }else{
-            $sql= "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor', imagen='$img' ,unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
+            $sql= "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor', imagen='$destino' ,unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
             if(DB::query($sql)){
               echo "<script>
                           alert('El producto se edito correctamente');

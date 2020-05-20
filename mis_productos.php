@@ -62,7 +62,10 @@ require_once 'navbar/navbar_inicio1.php';
                     
                       <div class="cont2 row">
                            <div class="cont col-xl-5 col-lg-5  col-md-6 col-sm-12  ">
-                                <img class="img1 " src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>"/><br>
+                         
+                                 
+                                 <?php echo '<img  class="img1 " src ="'.$mostrar['imagen'].'" width="100px" height="200px">' ?><!-- Mostrar imagen -->
+                            
                             </div>
                           <div class="cont col-xl-7 col-lg-7  col-md-6 col-sm-12 ">
                               <div class="card-body mt-1 ml-4">

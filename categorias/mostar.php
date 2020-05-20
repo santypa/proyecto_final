@@ -1,7 +1,8 @@
                             <div class="cl1 col-xl-3 col-lg-4  col-md-6 col-sm-9 ">    
                             <div class="card1 border-primary">
-  
-                             <img src="data:image/jpg;base64,<?php echo base64_encode($mostrar['imagen']) ?>" class="img1 img-thumbnail " alt="Responsive image"><br>
+
+                            <?php echo '<img  class="img1 " src ="'.$mostrar['imagen'].'" width="320px" height="200px">' ?>
+                           
 
                             <div class="card-body ms-4">
                                     <div class="dropdown">
