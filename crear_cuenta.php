@@ -20,7 +20,11 @@
     $whatsapp = $_POST["whatsapp"];
     $direccion = $_POST["direccion"];
     $ciudad = $_POST["ciudad"];
-    $img=addslashes(file_get_contents($_FILES['imagen']['tmp_name']));
+     //Crear Imagen en EN proyecyo
+     $imagen=$_FILES['imagen']['name'];
+     $ruta=$_FILES['imagen']['tmp_name'];
+     $destino="imagen/".$imagen;
+     copy($ruta,$destino);
         
     $existe=0;
     while($mostrar= mysqli_fetch_array($result)){
@@ -35,7 +39,7 @@
     if($existe<1){
        
         $sql = "insert into usuarios(nombre,email,password,celular,whatsapp,direccion,ciudad,img) 
-        values('$nombres', '$email',('$password'),'$celular','$whatsapp','$direccion','$ciudad','$img')";
+        values('$nombres', '$email',('$password'),'$celular','$whatsapp','$direccion','$ciudad','$destino')";
 
      if(DB::query($sql)){ //if($con->query($query) == true)
     

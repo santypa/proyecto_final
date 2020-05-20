@@ -41,8 +41,8 @@ require_once 'navbar/navbar_inicio1.php';
       if ($id_user == $mostrar['id']) {
       ?>
         <div class="container mx-auto card">
-         
-            <img class="img1 mx-auto  card"   src="data:image/jpg;base64,<?php echo base64_encode($mostrar['img']) ?>" /><br>
+        <?php echo '<img  class="img1 mx-auto  card"  src ="'.$mostrar['img'].'" width="500px" height="400px">' ?> <!-- Mostrar Imagen -->
+          
           
           <div class="container mx-auto ml-5 mt-3 mb-4 prin">
             <table class="table prin table-hover">
