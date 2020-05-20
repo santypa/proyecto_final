@@ -1,9 +1,3 @@
-<div class="container mx-auto" aria-label="Page navigation example">
-  <a href="#">sobre mosotros</a>
-  <a href="#">sobre mosotros</a>
-  <a href="#">sobre mosotros</a>
-</div>
-
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

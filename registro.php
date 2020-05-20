@@ -55,7 +55,7 @@ require_once 'navbar/navbar_inicio1.php';
                    <input type="text" name="ciudad" class="in1 form-control" id="exampleDropdownFormEmail2"required placeholder="Ciudad">
                  </div>
                  <div class="imge">
-                   <input type="file" name="imagen" id="exampleDropdownFormEmail2">
+                   <input type="file" name="imagen" id="exampleDropdownFormEmail2" accept="image/*">
                  </div>
 
                       <button type="submit" value="Registrar" id="regt" class="gur btn btn-primary animated infinite pulse delay">Guardar</button>

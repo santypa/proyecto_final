@@ -3,6 +3,7 @@
 include('includes/db.php');
 
 SESSION_START();
+
 if (isset($_SESSION['id'])) {
   $ides = $_SESSION['id'];
 } else {

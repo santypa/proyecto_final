@@ -137,7 +137,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `ciudad` varchar(225) NOT NULL,
   `img` longblob,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Volcando datos para la tabla basex.usuarios: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
