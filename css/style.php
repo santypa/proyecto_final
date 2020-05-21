@@ -1,6 +1,8 @@
 <style>
     <?php //// css para el navbar de index 
-    ?>.navbar {
+    ?>
+    .navbar {
+
         color: black;
     }
 
@@ -39,7 +41,7 @@
         border-radius: 20px;
     }
 
-    .car {
+    .car{
         background-color: silver;
     }
 
