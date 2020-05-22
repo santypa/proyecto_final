@@ -5,21 +5,21 @@
 ?>
 <?php
 
-$ids=$_GET['idep'];
-
 include('font/head.php');
-require_once 'navbar/navbar_inicio.php';
-require_once 'navbar/navbar_inicio1.php';
-?>
-
+/* require_once 'navbar/navbar_inicio.php';
+require_once 'navbar/navbar_inicio1.php'; */
+require_once 'navbar/navbar_index.php';
+?> 
 <link rel="stylesheet" href="css/style_detalle.css">  
 <title>Detalles Producto</title>
+<?php
 
-
-
-
-
-<div class="b2 container-fluid">    
+if(isset($_GET['idep'])){
+  $ids=$_GET['idep'];
+  require_once 'carrucel/carrucel.php';
+  ?>
+  
+  <div class="b2 container-fluid">    
   <div class=" container-fluid">
             <?php       
               $sql="SELECT p.id as idpro,p.nombre AS nom_prod,p.valor,p.unidades,p.especificacion,p.estado,p.imagen,
@@ -74,57 +74,17 @@ require_once 'navbar/navbar_inicio1.php';
                ?>
             
             
-
-  </div>                     
-                             <!---------------- Sql Detalles del producto ------------>
-            <?php       
-              $sql="SELECT *from producto";
-              $result= DB::query($sql);
-            ?>
-            <div class="b4 card-deck-fluid ">
-            
-                   <div class="r1 row row-cols-4">    
-                 <?php
-                 while($mostrar= mysqli_fetch_array($result)){
-                ?>
-                <?php
-                    if($ids!=$mostrar['id']){
-                        ?>
-                      <div class="c container-fluid col-xl-3 col-lg-4  col-md-6 col-sm-9 ">    
-                      <div class="card1 card border-primary">
-                      <?php echo '<img  class="img2 img-thumbnail " src ="'.$mostrar['imagen'].'" width="400px" height="500px">' ?> <!-- Mostrar Imagen -->
-                      
-                       
-                        <div class="c2 card-body ms-4">
-                              <div class="dropdown">
-                                <button class="bt2 btn btn-outline " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <?php echo $mostrar['nombre'] ?>
-                                </button>
-                                <?php  $idsp=$mostrar['id'] ?>
-                                <div class="btnd  mt-1 ml-4" >
-                                <a class="btn" href="detalles_producto.php?idep= <?php echo $idsp?>">Ver más detalles</a>
-                                </div>
-                               
-                                </button>
-                             
-                              </div>
-
-                        </div>
-                      </div>
-                     </div>
-                      <?php
-                    }
-                      ?>
-                     
-                     <?php
-                    }
-                    ?>
-
-               </div>
-
-            </div>
-    </div>
+<!--  -->
+    
     
 <?php
-include('font/final.php');
+
+require_once 'categorias/categ.php';
+
+}else{
+  $ids='';
+  require_once 'carrucel/carrucel.php';
+  require_once 'categorias/categ.php';
+}
 ?>
+

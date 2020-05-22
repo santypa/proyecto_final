@@ -1,3 +1,4 @@
+             
                             <div class="cl1 col-xl-3 col-lg-4  col-md-6 col-sm-9 ">
                               <div class="card1 border-primary">
                                 <div class="container mx-auto card">
@@ -12,6 +13,7 @@
                                     <?php
                                     $idpe = $mostrar['idpr'];
                                     ?>
+
                                     <div class="btnd  mt-1 ml-4">
                                       <a class="btn" href="detalles_producto.php?idep= <?php echo $idpe ?>">Ver más detalles</a>
                                     </div>
@@ -24,7 +26,9 @@
                                           <small class="text-muted">Categoria : <?php echo $mostrar['nomb_catg'] ?></small><br></p>
                                       </div>
                                     </div>
+
                                   </div>
+                              
                                 </div>
                               </div>
                             </div>

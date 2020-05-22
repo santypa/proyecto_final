@@ -10,6 +10,7 @@
           $ides=0;
         }
         include ('css/style.php');
+        
 ?>
   
 

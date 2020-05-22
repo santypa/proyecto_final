@@ -83,7 +83,7 @@ require_once 'navbar/navbar_inicio1.php';
 
 <!------------------------------- ESTADO - EDITAR -ELIMINAR --------------------------------------->
                       
-              <td class="<?= $mostrar['estado'] ?>"><?= $mostrar['estado'] ?></td>
+              
                 <input type="hidden" name="estado" value="<?= $mostrar['estado']?>">
                
                 <?php  if($mostrar['estado'] == "activo"){  ?>
