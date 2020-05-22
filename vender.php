@@ -69,7 +69,7 @@ require_once 'navbar/navbar_inicio1.php';
          
 
                  <div class="col mt-1 ml-4 ">
-                   <input type="file" name="imagen" id="exampleDropdownFormEmail2" accept="image/*">
+                   <input type="file" name="imagen" required id="exampleDropdownFormEmail2" accept="image/*">
                  </div>
                  <br>
                       <button type="submit" value="Registrar" id="regt" class="gur btn btn-primary animated infinite pulse delay">Guardar</button>

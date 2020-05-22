@@ -86,21 +86,25 @@ require_once 'navbar/navbar_inicio1.php';
                     </div>      
                  </div>
 
-         
+                <?php
+            
+                ?>
 
                  <div class="imge">
-                   <input type="file" name="imagen" id="exampleDropdownFormEmail2"  >
-                 
-                 
                    <?php 
                    
                      $imag= DB::query($sql_p);
-                     while($mostrar= mysqli_fetch_array($imag)){?>
-                      <?php echo '<img  class="img2 img-thumbnail " src ="'.$mostrar['imagen'].'" width="400px" height="500px">' ?> <!-- Mostrar Imagen -->
+                     while($mostrar= mysqli_fetch_array($imag)){
+                         
+                        $nos=$mostrar['imagen'];
+                       
+                         ?>
+                      <?php echo '<img  class="img2 img-thumbnail "  src ="'.$mostrar['imagen'].'" width="400px" height="500px">' ?> <!-- Mostrar Imagen -->
                      <a href="#" class="delete" tilte="ver archivo adjunto">
                      <span class='glyphicon glyphicon-trash' arial-hidden='true'></span>
+                       
                      </a>
-                      <style>
+                   <!--    <style>
                             .img{
                               
                                 position: relative;
@@ -112,12 +116,22 @@ require_once 'navbar/navbar_inicio1.php';
                                 border-radius:10px;
                                 border-color:blue;
                             }
-                     </style>
-                      <?php
+                     </style> -->
+                     <?php
+                    if($producto->imagen=='imagen/'){
+                        echo "sin imagen";
+                       ?> <input type="file" name="imagen" required id="exampleDropdownFormEmail2" accept="image/*"><?php
+    
+                      }else{
+                        echo "con imagen"; 
+                        ?> <input type="file" name="imagen" id="exampleDropdownFormEmail2" accept="image/*"><?php
+                      }
                   }
-               ?>
-                   
-                
+                  
+                  ?>
+                  
+                  <br>
+
                  </div>
 
                  <?php  if($producto->estado == "activo"){  ?>
@@ -137,6 +151,7 @@ require_once 'navbar/navbar_inicio1.php';
 
         </from>
     </div>
+    
 <?php
 include('font/final.php');
 ?>

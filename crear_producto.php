@@ -21,6 +21,7 @@ if (isset($_GET['estado']) == TRUE) {
   } else {
     $es = "activo";
   }
+
   $sql = "UPDATE producto set estado='$es' WHERE id='$id'";
 } else {
 
@@ -37,6 +38,7 @@ if (isset($_GET['estado']) == TRUE) {
   $destino = "imagen/" . $imagen;
   copy($ruta, $destino);
 
+ 
 
   if (isset($id) == false) {
     $estado = "activo";
@@ -60,7 +62,14 @@ if (isset($_GET['estado']) == TRUE) {
       die;
     }
   } else {
-    $sql = "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor', imagen='$destino' ,unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
+
+    if($imagen==''){
+      $sql = "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor',unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
+    }else{
+      $sql = "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor', imagen='$destino' ,unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
+    }
+
+    
     if (DB::query($sql)) {
       echo "<script>
                           alert('El producto se edito correctamente');
