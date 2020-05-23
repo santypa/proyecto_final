@@ -15,7 +15,7 @@ if (isset($_POST['buscar']) != '') {
   $result_query = mysqli_fetch_array($result1);
   $total_registro = $result_query['total_productos'];
 
-  $por_paginas = 16;
+  $por_paginas = 12;
   if (empty($_GET['pagin'])) {
     $por_pagina = 1;
   } else {

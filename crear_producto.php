@@ -29,6 +29,8 @@ if (isset($_GET['estado']) == TRUE) {
   $estado = $_POST["estado"];
   $producto = $_POST["nombre"];
   $categoria = $_POST['categoria'];
+ 
+
   $valor = $_POST['valor'];
   $unida = $_POST['unidad'];
   $caracteristica = $_POST['caracteristica'];
@@ -63,10 +65,21 @@ if (isset($_GET['estado']) == TRUE) {
     }
   } else {
 
-    if($imagen==''){
-      $sql = "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor',unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
+    if($imagen=='' ){
+      if($categoria==15){
+        $sql = "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor',unidades='$unida',especificacion='$caracteristica'  where id='$id'   ";
+      }
+      else{
+        $sql = "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor',unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
+      }
     }else{
-      $sql = "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor', imagen='$destino' ,unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
+      if($categoria==15){
+        $sql = "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor', imagen='$destino' ,unidades='$unida',especificacion='$caracteristica' where id='$id'   ";
+      }
+      else{
+        $sql = "UPDATE producto set  estado='$estado',nombre='$producto',valor='$valor', imagen='$destino' ,unidades='$unida',especificacion='$caracteristica',id_categoria_producto='$categoria'  where id='$id'   ";
+      }
+     
     }
 
     
