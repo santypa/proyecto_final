@@ -11,14 +11,13 @@ include('includes/db.php');
     die;
 }
 $id = $_GET['id'];
-$sql_p = "select * from usuarios where id= $id";
+$sql = "SELECT * FROM usuarios where id=$id ";
+$result = DB::query($sql);
 
-$user = DB::query($sql_p);
+/* $user = mysqli_fetch_object($user);
+ */
 
-$user = mysqli_fetch_object($user);
-
-
-if($user == false){
+if($result == false){
     echo "El usuario no existe";
     die;
 }
@@ -31,61 +30,86 @@ include('font/head.php');
 
 require_once 'navbar/navbar_inicio.php';
 require_once 'navbar/navbar_inicio1.php';
+
 ?>
 
-<div class="a2 container w-50">
-    <form  action="crear_cuenta.php"  method="POST" enctype="multipart/form-data" >
-    <input type="hidden" name="id" value="<?= $user->id ?>">
+<?php
 
-             <div class="input">
-               <label for="exampleDropdownFormEmail2">Nombres</label>
-               <input type="text" name="nombres" class="form-control" id="exampleDropdownFormEmail2" required placeholder="Nombres"  value="<?= $user->nombre ?>">
-             </div>
+while ($mostrar = mysqli_fetch_array($result)) {
 
-            <div class="input-group justify-content-around">
-               <label for="exampleDropdownFormEmail2">Correo</label>
-               <label for="exampleDropdownFormPassword2">Contraseña</label>
-               
-             </div>
-              
-             <div class="input-group justify-content-around  ">
+?>
+  <div class="a2 container w-50">
+  <form  action="crear_cuenta.php?idpe=<?php $id ?>"  method="POST" enctype="multipart/form-data" >
+  <input type="hidden" name="id" value="<?= $mostrar['id'] ?>">
+
+           <div class="input">
+             <label for="exampleDropdownFormEmail2">Nombres</label>
+             <input type="text" name="nombres" class="form-control" id="exampleDropdownFormEmail2" required placeholder="Nombres"  value="<?= $mostrar['nombre']?>">
+           </div>
+
+          <div class="input-group justify-content-around">
+             <label for="exampleDropdownFormEmail2">Correo</label>
+             <label for="exampleDropdownFormPassword2">Contraseña</label>
+             
+           </div>
+            
+           <div class="input-group justify-content-around  ">
+        
+               <input type="email" name="email"  class=" form-control p-2" id="exampleDropdownFormEmail2" required placeholder="email@example.com" value="<?= $mostrar['email'] ?>">
+              <input type="password" name="password" class="in1 form-control p-2 " id="exampleDropdownFormPassword2" required placeholder="Password" >
+           </div>
+            
+           
+           
+           <div class="input-group justify-content-around">
+             <label for="exampleDropdownFormEmail2">Celular</label>
+             <label for="exampleDropdownFormEmail2">WhatsApp</label>
+             
+           </div>
+
+           <div class="input-group justify-content-around">
+             <input type="text"  name="celular" class="form-control" id="exampleDropdownFormEmail2"required  placeholder="Celular" value="<?= $mostrar['celular'] ?>">
+             <input type="text"  name="whatsapp" class="in1 form-control" id="exampleDropdownFormEmail2"required  placeholder="Whatsapp" value="<?= $mostrar['whatsapp']?>">
+           </div>
+
+           <div class="input-group justify-content-around">
+             <label for="exampleDropdownFormEmail2">Direccion</label>
+             <label for="exampleDropdownFormEmail2">Ciudad</label>
+           </div>
+
+           <div class="input-group justify-content-around">
+             <input type="text"  name="direccion"  class="form-control" id="exampleDropdownFormEmail2"required placeholder="Direccion" value="<?= $mostrar['direccion'] ?>">
+             <input type="text" name="ciudad" class="in1 form-control" id="exampleDropdownFormEmail2"required placeholder="Ciudad"value="<?= $mostrar['ciudad'] ?>">
+           </div>
           
-                 <input type="email" name="email"  class=" form-control p-2" id="exampleDropdownFormEmail2" required placeholder="email@example.com" value="<?= $user->email ?>">
-                <input type="password" name="password" class="in1 form-control p-2 " id="exampleDropdownFormPassword2" required placeholder="Password" >
-             </div>
-              
+           <div class="imge">
+           <?php
+           if($mostrar['img'] =='imagen/'){
+                      
+                       echo '<img  class="img1 mx-auto  card"  src ="'.$mostrar['img'].'" width="300px" height="50%">' 
+                      ?> <input type="file" name="imagen" required id="exampleDropdownFormEmail2" accept="image/*"><?php
+   
+                     }else{
+                       
+                       echo '<img  class="img1 mx-auto  card"  src ="'.$mostrar['img'].'" width="300px" height="50%">' ;
+                       ?> <input type="file" name="imagen" id="exampleDropdownFormEmail2" accept="image/*"><?php
+                     }
+
+           ?>
+
              
-             
-             <div class="input-group justify-content-around">
-               <label for="exampleDropdownFormEmail2">Celular</label>
-               <label for="exampleDropdownFormEmail2">WhatsApp</label>
-               
-             </div>
+           </div>
 
-             <div class="input-group justify-content-around">
-               <input type="text"  name="celular" class="form-control" id="exampleDropdownFormEmail2"required  placeholder="Celular" value="<?= $user->celular ?>">
-               <input type="text"  name="whatsapp" class="in1 form-control" id="exampleDropdownFormEmail2"required  placeholder="Whatsapp" value="<?= $user->whatsapp ?>">
-             </div>
-
-             <div class="input-group justify-content-around">
-               <label for="exampleDropdownFormEmail2">Direccion</label>
-               <label for="exampleDropdownFormEmail2">Ciudad</label>
-             </div>
-
-             <div class="input-group justify-content-around">
-               <input type="text"  name="direccion"  class="form-control" id="exampleDropdownFormEmail2"required placeholder="Direccion" value="<?= $user->direccion ?>">
-               <input type="text" name="ciudad" class="in1 form-control" id="exampleDropdownFormEmail2"required placeholder="Ciudad"value="<?= $user->ciudad ?>">
-             </div>
-             <div class="imge">
-               <input type="file" name="imagen" id="exampleDropdownFormEmail2">
-             </div>
-
-                  <button type="submit" value="Registrar" id="regt" class="gur btn btn-primary animated infinite pulse delay">Guardar</button>
-       </form>
-
-
-    </from>
+                <button type="submit" value="Registrar" id="regt" class="gur btn btn-primary animated infinite pulse delay">Guardar</button>
+     </form>
+    
 </div>
+
+<?php
+}
+?>
+
+
 <?php
 include('font/final.php');
 
