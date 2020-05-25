@@ -75,7 +75,7 @@
 
        
         if($imagen==''){
-          $destino = "imagen/user.jpg";
+          $destino = "imagen/us.png";
           $sql = "insert into usuarios(nombre,email,password,celular,whatsapp,direccion,ciudad,img) 
         values('$nombres', '$email',('$password'),'$celular','$whatsapp','$direccion','$ciudad','$destino')";
         }else{

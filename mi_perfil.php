@@ -42,7 +42,7 @@ require_once 'navbar/navbar_inicio1.php';
       ?>
         <div class="container mx-auto card">
 
-        <?php echo '<img  class="img1 mx-auto  card"  src ="'.$mostrar['img'].'" width="300px" height="50%">' ?> <!-- Mostrar Imagen -->
+        <?php echo '<img  class="img1 mx-auto  card"  src ="'.$mostrar['img'].'" width="200px" height="40%">' ?> <!-- Mostrar Imagen -->
           
           
           <div class="container mx-auto ml-5 mt-3 mb-4 prin">
