@@ -143,12 +143,9 @@ while($mostrar= mysqli_fetch_array($imag)){
                            }
                     </style> -->
                     <?php
-                   if($mostrar['imagen'] =='imagen/'){
-                       echo "sin imagen";
+                   if($mostrar['imagen'] =='imagen/'){    
                       ?> <input type="file" name="imagen" required id="exampleDropdownFormEmail2" accept="image/*"><?php
-   
                      }else{
-                       echo "con imagen"; 
                        ?> <input type="file" name="imagen" id="exampleDropdownFormEmail2" accept="image/*"><?php
                      }
                       }
@@ -156,12 +153,9 @@ while($mostrar= mysqli_fetch_array($imag)){
                  /*  } */
                   
                   ?>
-                  
                   <br>
-
                  </div>
-
-                 <?php  if($producto->estado == "activo"){  ?>
+                 <?php  if($mostrar['estado'] == "activo"){  ?>
                         <label for="">Activo</label>
                         <input type="radio" name="estado" value="activo" checked>
                         <label for="">Inactivo</label>

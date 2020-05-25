@@ -172,7 +172,7 @@
                  }else{
             echo "<script>
             alert('correo o contraseña incorecta');
-            window.location= 'ingresar.php'
+            window.location= 'index.php'
             </script>";
                   }
               }

@@ -38,8 +38,9 @@ require_once 'navbar/navbar_inicio1.php';
 while ($mostrar = mysqli_fetch_array($result)) {
 
 ?>
+ 
   <div class="a2 container w-50">
-  <form  action="crear_cuenta.php?idpe=<?php $id ?>"  method="POST" enctype="multipart/form-data" >
+  <form  action="crear_cuenta.php"  method="POST" enctype="multipart/form-data" >
   <input type="hidden" name="id" value="<?= $mostrar['id'] ?>">
 
            <div class="input">
@@ -83,19 +84,8 @@ while ($mostrar = mysqli_fetch_array($result)) {
            </div>
           
            <div class="imge">
-           <?php
-           if($mostrar['img'] =='imagen/'){
-                      
-                       echo '<img  class="img1 mx-auto  card"  src ="'.$mostrar['img'].'" width="300px" height="50%">' 
-                      ?> <input type="file" name="imagen" required id="exampleDropdownFormEmail2" accept="image/*"><?php
-   
-                     }else{
-                       
-                       echo '<img  class="img1 mx-auto  card"  src ="'.$mostrar['img'].'" width="300px" height="50%">' ;
-                       ?> <input type="file" name="imagen" id="exampleDropdownFormEmail2" accept="image/*"><?php
-                     }
-
-           ?>
+         
+           <input type="file" name="imagen" id="exampleDropdownFormEmail2" accept="image/*">
 
              
            </div>
