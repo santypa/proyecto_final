@@ -12,6 +12,7 @@ include('includes/db.php');
 }
 $id = $_GET['id'];
 $sql_p = "select * from usuarios where id= $id";
+
 $user = DB::query($sql_p);
 
 $user = mysqli_fetch_object($user);

@@ -104,8 +104,8 @@ while($mostrar= mysqli_fetch_array($imag)){
 
                  <div class="input">
                  <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Especificacion Del Producto</label> <?= $producto->nomb_catg ?>
-                    <input type="text" required name="caracteristica" value="<?= $producto->especificacion ?>" class="form-control" id="exampleFormControlTextarea1" rows="3" value="<?= $mostrar['especificacion'] ?>" ></input>
+                    <label for="exampleFormControlTextarea1">Especificacion Del Producto</label> 
+                    <input type="text" required name="caracteristica" value="<?= $mostrar['especificacion'] ?>" class="form-control" id="exampleFormControlTextarea1" rows="3" value="<?= $mostrar['especificacion'] ?>" ></input>
                     </div>      
                  </div>
 
