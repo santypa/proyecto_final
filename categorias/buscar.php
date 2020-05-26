@@ -1,13 +1,23 @@
 <?php
+
+$buscar=$buscando;
+
  $sql = "SELECT p.id as idpr, p.nombre AS nom_pro,p.unidades,p.valor,p.imagen,p.especificacion,categoria_producto.id AS id_cat ,categoria_producto.nombre AS nomb_catg 
  FROM producto AS p             
- INNER JOIN categoria_producto ON categoria_producto.id= p.id_categoria_producto";
+ INNER JOIN categoria_producto ON categoria_producto.id= p.id_categoria_producto WHERE (p.nombre LIKE '$buscar%')";
 
-$result = DB::query($sql);
+$result = DB::query($sql); 
 $si=0;
+
 while ($mostrar = mysqli_fetch_array($result)) {
 
   $nompr = $mostrar['nom_pro'];
+ 
+ 
+  include('categorias/mostar.php');
+  $si++;
+    
+        /*      $nompr = $mostrar['nom_pro'];
 
             $log = strlen($buscando);
             $st = $log;
@@ -32,17 +42,16 @@ while ($mostrar = mysqli_fetch_array($result)) {
 
             if ($ta[0] == $te[0] || $ta[0] == $te1 ||$ta[0] == $te2  ) {
               include('categorias/mostar.php');
-              
+
             }else{
-              $si++;
-            }
+             
+            } */
 
             /*  echo $ta[0];
-            echo $te[0]; */
-   
+            echo $te[0];   */
 }
-
-if($si>1){
+ 
+if($si<1){
   ?> <img src="img/error.jpg" class="d" alt="...">
         
   <style>
@@ -55,6 +64,7 @@ if($si>1){
   <?php
 
 }
+$si=0;
 ?>
 
 
