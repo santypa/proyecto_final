@@ -99,9 +99,9 @@
         <li class="nav-item">
          <a class="nav-link" href="vender.php"><h>Vender</h> </a>
         </li>
-        <li class="nav-item">
+      <!--   <li class="nav-item">
           <a class="nav-link" href="mostrar.php"><h>Mis compras</h></a>
-        </li>
+        </li> -->
 
        
         <li class="nav-item dropdown">

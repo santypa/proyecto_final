@@ -20,7 +20,7 @@
                                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                       <div class="card card-body">
                                         <small class="text-muted">Caracteristicas:</small>
-                                        <p><?php echo $mostrar['especificacion'] ?><br>
+                                        <!-- <p><?php echo $mostrar['especificacion'] ?><br> -->
                                           <small class="text-muted">Unidades : <?php echo $mostrar['unidades'] ?></small><br>
                                           <small class="text-muted">Valor Unitario : <?php echo $mostrar['valor'] ?></small><br>
                                           <small class="text-muted">Categoria : <?php echo $mostrar['nomb_catg'] ?></small><br></p>

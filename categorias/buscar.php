@@ -4,7 +4,7 @@
  INNER JOIN categoria_producto ON categoria_producto.id= p.id_categoria_producto";
 
 $result = DB::query($sql);
-
+$si=0;
 while ($mostrar = mysqli_fetch_array($result)) {
 
   $nompr = $mostrar['nom_pro'];
@@ -32,10 +32,29 @@ while ($mostrar = mysqli_fetch_array($result)) {
 
             if ($ta[0] == $te[0] || $ta[0] == $te1 ||$ta[0] == $te2  ) {
               include('categorias/mostar.php');
+              
+            }else{
+              $si++;
             }
 
             /*  echo $ta[0];
             echo $te[0]; */
    
 }
+
+if($si>1){
+  ?> <img src="img/error.jpg" class="d" alt="...">
+        
+  <style>
+    .d{
+      
+      width:100%;
+      height:50%;
+    }
+  </style>
+  <?php
+
+}
 ?>
+
+

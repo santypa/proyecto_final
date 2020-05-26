@@ -55,8 +55,17 @@ if (isset($_POST['buscar']) != '') {
         }
       }
       if ($productos != 2) {
-        echo "No hay productos de esa categoria por el momento ... sorry";
+        
       ?>
+        <img src="img/error.jpg" class="d" alt="...">
+        
+        <style>
+          .d{
+            
+            width:100%;
+            height:50%;
+          }
+        </style>
       <?php
       }
       ?>

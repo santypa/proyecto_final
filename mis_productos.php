@@ -64,7 +64,7 @@ require_once 'navbar/navbar_inicio1.php';
                            <div class="cont col-xl-5 col-lg-5  col-md-6 col-sm-12  ">
                          
                                  
-                                 <?php echo '<img  class="img1 " src ="'.$mostrar['imagen'].'" width="100px" height="200px">' ?><!-- Mostrar imagen -->
+                                 <?php echo '<img  class="img1 " src ="'.$mostrar['imagen'].'" width="100%" height="100%">' ?><!-- Mostrar imagen -->
                             
                             </div>
                           <div class="cont col-xl-7 col-lg-7  col-md-6 col-sm-12 ">

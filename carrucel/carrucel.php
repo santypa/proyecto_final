@@ -6,13 +6,19 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img/inicio.jpg" class="d-block w-100 " alt="..."  >
+      <img src="img/inicio.jpg" class="d-block w-150 " alt="..."  >
     </div>
     <div class="carousel-item">
-      <img src="img/inicio2.jpg" class="d-block w-100 " alt="...">
+      <img src="img/car1.jpg" class="d-block w-150 " alt="...">
     </div>
     <div class="carousel-item">
-      <img src="img/inicio2.jpg" class="d-block w-100 " alt="...">
+      <img src="img/car2.jpg" class="d-block w-150 " alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/car3.jpg" class="d-block w-150 " alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/carr.jpg" class="d-block w-150 " alt="...">
     </div>
  
   <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
