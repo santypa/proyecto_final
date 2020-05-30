@@ -1,17 +1,15 @@
-
 <style>
-  h3{
-color:black;
+  h3 {
+    color: black;
 
-}  
-h3:hover{
-color:white;
+  }
 
-}
+  h3:hover {
+    color: white;
 
+  }
 </style>
-   </div>
- 
- </div>
-</nav>
+</div>
 
+</div>
+</nav>
